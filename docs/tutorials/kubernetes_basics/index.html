@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Kubernetes Basics · GitBook</title>
+        <title>Kubernetes入門 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,6 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="1_create_a_cluter.md" />
+    
     
     <link rel="prev" href="../" />
     
@@ -92,7 +94,7 @@
                 <a href="../../">
             
                     
-                    Home
+                    はじめに
             
                 </a>
             
@@ -100,20 +102,46 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../../user_guide/">
+        <li class="chapter " data-level="1.2" >
             
-                <a href="../../user_guide/">
+                <span>
             
                     
-                    User Guide
+                    Home
             
-                </a>
+                </span>
             
 
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../">
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Setup
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Tasks
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../">
             
                 <a href="../">
             
@@ -127,12 +155,26 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="./">
+        <li class="chapter active" data-level="1.5.1" data-path="./">
             
                 <a href="./">
             
                     
-                    Kubernetes Basics
+                    Kubernetes入門
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="1_create_a_cluter.md">
+            
+                <span>
+            
+                    
+                    Cluster作成
             
                 </a>
             
@@ -140,8 +182,208 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5.1.2" >
+            
+                <span>
+            
+                    
+                    Deploy an App
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" >
+            
+                <span>
+            
+                    
+                    Explore Your App
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" >
+            
+                <span>
+            
+                    
+                    Expose Your App Publicly
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" >
+            
+                <span>
+            
+                    
+                    Scale Your App
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" >
+            
+                <span>
+            
+                    
+                    Update Your App
+            
+                </span>
+            
+
+            
+        </li>
+    
 
             </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" >
+            
+                <span>
+            
+                    
+                    Online Training Course
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" >
+            
+                <span>
+            
+                    
+                    Hello Minikube
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" >
+            
+                <span>
+            
+                    
+                    Object Management Using kubectl
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" >
+            
+                <span>
+            
+                    
+                    Stateless Applications
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" >
+            
+                <span>
+            
+                    
+                    Stateful Applications
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" >
+            
+                <span>
+            
+                    
+                    Clusters
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" >
+            
+                <span>
+            
+                    
+                    Services
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    Concepts
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Reference
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Samples
+            
+                </span>
+            
+
             
         </li>
     
@@ -175,7 +417,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Kubernetes Basics</a>
+        <a href="../.." >Kubernetes入門</a>
     </h1>
 </div>
 
@@ -190,7 +432,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="kubernetes-basics">Kubernetes Basics</h1>
+                                <h1 id="kubernetes&#x5165;&#x9580;">Kubernetes&#x5165;&#x9580;</h1>
+<p>(&#x539F;&#x984C;) Kubernetes Basics</p>
+<p>&#x3053;&#x306E;&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;&#x306F;Kubernetes&#x306E;&#x57FA;&#x672C;&#x30EA;&#x30CF;&#x30FC;&#x30B5;&#x30EB;&#x3067;&#x3059;&#x3002;
+&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x306F;&#x4E3B;&#x306A;Kubernetes&#x306E;&#x6A5F;&#x80FD;&#x3084;&#x30B3;&#x30F3;&#x30BB;&#x30D7;&#x30C8;&#x306E;&#x80CC;&#x666F;&#x3092;&#x8AAC;&#x660E;&#x3057;&#x3001;&#x30A4;&#x30F3;&#x30BF;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30D6;&#x306A;&#x30AA;&#x30F3;&#x30E9;&#x30A4;&#x30F3;&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;&#x3092;&#x7528;&#x610F;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x30A4;&#x30F3;&#x30BF;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30D6;&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;&#x306B;&#x3088;&#x3063;&#x3066;&#x3042;&#x306A;&#x305F;&#x306F;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x306A;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x3068;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5316;&#x3055;&#x308C;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x7BA1;&#x7406;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h1 id="kubernetes&#x306F;&#x4F55;&#x304C;&#x3067;&#x304D;&#x308B;&#xFF1F;">Kubernetes&#x306F;&#x4F55;&#x304C;&#x3067;&#x304D;&#x308B;&#xFF1F;</h1>
+<p>(&#x539F;&#x984C;) What can Kubernetes do for you?</p>
+<p>&#x30E2;&#x30C0;&#x30F3;&#x306A;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3067;&#x306F;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x306F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;24&#x6642;&#x9593;365&#x65E5;&#x7A3C;&#x50CD;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x671F;&#x5F85;&#x3059;&#x308B;&#x3057;&#x3001;&#x958B;&#x767A;&#x8005;&#x306F;&#x65E5;&#x306B;&#x4F55;&#x5EA6;&#x3082;&#x30C7;&#x30D7;&#x30ED;&#x30A4;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x671F;&#x5F85;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5316;&#x306F;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x304C;&#x305D;&#x308C;&#x3089;&#x306E;&#x30B4;&#x30FC;&#x30EB;&#x3092;&#x9054;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x5F79;&#x7ACB;&#x3061;&#x307E;&#x3059;&#x3002;
+&#x30C0;&#x30A6;&#x30F3;&#x30BF;&#x30A4;&#x30E0;&#x306A;&#x3057;&#x3067;&#x7D20;&#x65E9;&#x304F;&#x7C21;&#x5358;&#x306B;&#x30EA;&#x30EA;&#x30FC;&#x30B9;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+Kubernetes&#x306F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5316;&#x3055;&#x308C;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x3044;&#x3064;&#x3067;&#x3082;&#x3069;&#x3053;&#x3067;&#x3082;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x3066;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x5FC5;&#x8981;&#x3068;&#x3059;&#x308B;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3084;&#x30C4;&#x30FC;&#x30EB;&#x3092;&#x898B;&#x3064;&#x3051;&#x307E;&#x3059;&#x3002;
+<a href="http://kubernetes.io/docs/whatisk8s/" target="_blank">Kubernetes</a>&#x306F;Google&#x304C;&#x84C4;&#x7A4D;&#x3057;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x30AA;&#x30FC;&#x30B1;&#x30B9;&#x30C8;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x7D4C;&#x9A13;&#x3092;&#x5143;&#x306B;&#x30C7;&#x30B6;&#x30A4;&#x30F3;&#x3055;&#x308C;&#x305F;&#x3001;Production&#x30EC;&#x30D9;&#x30EB;&#x306E;&#x30AA;&#x30FC;&#x30D7;&#x30F3;&#x30BD;&#x30FC;&#x30B9;&#x30D7;&#x30E9;&#x30C3;&#x30C8;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3067;&#x3059;&#x3002;
+&#x3055;&#x3089;&#x306B;&#x30B3;&#x30DF;&#x30E5;&#x30CB;&#x30C6;&#x30A3;&#x306B;&#x3088;&#x308B;&#x6700;&#x5584;&#x306E;&#x30A2;&#x30A4;&#x30C7;&#x30A3;&#x30A2;&#x3082;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h1 id="kubernetes-basics-modules">Kubernetes Basics Modules</h1>
+<ol>
+<li><a href="">Cluster&#x4F5C;&#x6210;</a></li>
+<li><a href="">Deploy an app</a></li>
+<li><a href="">Explore your app</a></li>
+<li><a href="">Expose your app publicly</a></li>
+<li><a href="">Scale up your app</a></li>
+<li><a href="">Update your app</a></li>
+</ol>
 
                                 
                                 </section>
@@ -218,10 +481,14 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Tutorials">
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Tutorials">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="1_create_a_cluter.md" class="navigation navigation-next " aria-label="Next page: Cluster作成">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -230,7 +497,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Kubernetes Basics","level":"1.3.1","depth":2,"previous":{"title":"Tutorials","level":"1.3","depth":1,"path":"tutorials/index.md","ref":"tutorials/index.md","articles":[{"title":"Kubernetes Basics","level":"1.3.1","depth":2,"path":"tutorials/kubernetes_basics/index.md","ref":"tutorials/kubernetes_basics/index.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tutorials/kubernetes_basics/index.md","mtime":"2017-03-19T15:57:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-19T16:01:48.961Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Kubernetes入門","level":"1.5.1","depth":2,"next":{"title":"Cluster作成","level":"1.5.1.1","depth":3,"path":"tutorials/kubernetes_basics/1_create_a_cluter.md","ref":"tutorials/kubernetes_basics/1_create_a_cluter.md","articles":[]},"previous":{"title":"Tutorials","level":"1.5","depth":1,"path":"tutorials/index.md","ref":"tutorials/index.md","articles":[{"title":"Kubernetes入門","level":"1.5.1","depth":2,"path":"tutorials/kubernetes_basics/index.md","ref":"tutorials/kubernetes_basics/index.md","articles":[{"title":"Cluster作成","level":"1.5.1.1","depth":3,"path":"tutorials/kubernetes_basics/1_create_a_cluter.md","ref":"tutorials/kubernetes_basics/1_create_a_cluter.md","articles":[]},{"title":"Deploy an App","level":"1.5.1.2","depth":3,"ref":"","articles":[]},{"title":"Explore Your App","level":"1.5.1.3","depth":3,"ref":"","articles":[]},{"title":"Expose Your App Publicly","level":"1.5.1.4","depth":3,"ref":"","articles":[]},{"title":"Scale Your App","level":"1.5.1.5","depth":3,"ref":"","articles":[]},{"title":"Update Your App","level":"1.5.1.6","depth":3,"ref":"","articles":[]}]},{"title":"Online Training Course","level":"1.5.2","depth":2,"ref":"","articles":[]},{"title":"Hello Minikube","level":"1.5.3","depth":2,"ref":"","articles":[]},{"title":"Object Management Using kubectl","level":"1.5.4","depth":2,"ref":"","articles":[]},{"title":"Stateless Applications","level":"1.5.5","depth":2,"ref":"","articles":[]},{"title":"Stateful Applications","level":"1.5.6","depth":2,"ref":"","articles":[]},{"title":"Clusters","level":"1.5.7","depth":2,"ref":"","articles":[]},{"title":"Services","level":"1.5.8","depth":2,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tutorials/kubernetes_basics/index.md","mtime":"2017-05-18T09:39:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-18T10:00:51.399Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -238,10 +505,6 @@
         
     <script src="../../gitbook/gitbook.js"></script>
     <script src="../../gitbook/theme.js"></script>
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
