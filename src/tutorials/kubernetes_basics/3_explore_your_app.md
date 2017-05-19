@@ -90,4 +90,70 @@ describeコマンドの出力は広範囲に渡り、まだ説明していない
 
 ## Step 2: ターミナル内でのアプリケーションの表示
 
+前章での内容をおさらいしましょう。
+標準では、すべてのPodはクラスタ内でのみアクセスできます。
+ローカルマシンからアクセスするためにはローカルマシンとKubernetesクラスタ間のプロキシを作成する必要があります。
 
+```
+kubectl proxy
+```
+
+`proxy`コマンドはフォアグラウンドで起動します。
+次からのコマンドは別のターミナルで実行してください。
+新しいターミナルタブを開いてください。
+
+Podの名前を取得し`POD_NAME`環境変数に格納します。
+
+```
+export POD_NAME=$(kubectl get pods -o go-template --template '{{range.items}}{{.metadata.name}}{{"\n"}}{{end}}')
+echo Name of the Pod: $POD_NAME
+```
+
+アプリケーションの出力を得るには`curl`でリクエストします。
+
+```
+curl http://localhost:8001/api/v1/proxy/namespaces/default/pods/$POD_NAME/
+```
+
+## Step 3: コンテナログの取得
+
+コンテナからログを得るには、`kubectl logs`コマンドを使います。
+
+```
+kubectl logs $POD_NAME
+```
+
+Podには1つのコンテナのみなので、コンテナ名を指定する必要はありません。
+
+## Step 4: コンテナでのコマンド実行
+
+コンテナ内で直接コマンドを実行することができます。
+`exec`コマンドを使います。
+環境変数の一覧を取得してみましょう。
+
+```
+kubectl exec $POD_NAME env
+```
+
+ログのときと同じように、Pod内にひとつしかコンテナがないのでコンテナの名前は省略できます。
+
+次は、コンテナでbashセッションを開始しましょう。
+
+```
+kubectl exec -ti $POD_NAME bash
+```
+
+Node.jsアプリケーションを起動しているコンテナでコンソールを開けました。
+ソースコードを表示してみましょう。
+
+```
+cat server.js
+```
+
+アプリケーションが起動しているかどうか`curl`で確認することもできます。
+
+```
+curl localhost:8080
+```
+
+閉じるには`exit`を入力します。
