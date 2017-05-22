@@ -10,7 +10,7 @@
     * [2. アプリケーションデプロイ](tutorials/kubernetes_basics/2_deploy_an_app.md)
     * [3. PodとNode](tutorials/kubernetes_basics/3_explore_your_app.md)
     * [4. アプリケーションの公開](tutorials/kubernetes_basics/4_expose_your_app_publicly.md)
-    * [5. Scale Your App](tutorials/kubernetes_basics/5_scale_your_app.md)
+    * [5. スケール](tutorials/kubernetes_basics/5_scale_your_app.md)
     * [6. Update Your App](tutorials/kubernetes_basics/6_update_your_app.md)
   * [Online Training Course]()
   * [Hello Minikube]()

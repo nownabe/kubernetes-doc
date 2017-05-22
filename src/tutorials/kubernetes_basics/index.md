@@ -21,5 +21,5 @@ Kubernetesはコンテナ化されたアプリケーションをいつでもど�
 1. [アプリケーションデプロイ](2_deploy_an_app.html)
 1. [PodとNode](3_explore_your_app.html)
 1. [アプリケーションの公開](4_expose_your_app_publicly.html)
-1. [Scale up your app](5_scale_your_app.html)
+1. [スケール](5_scale_your_app.html)
 1. [Update your app](6_update_your_app.html)
