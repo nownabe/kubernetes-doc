@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2. アプリケーションデプロイ · GitBook</title>
+        <title>Configurationベストプラクティス · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,6 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="3_explore_your_app.html" />
-    
-    
-    <link rel="prev" href="1_create_a_cluster.html" />
     
 
     </head>
@@ -128,9 +124,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../../concepts/">
+        <li class="chapter " data-level="1.4" data-path="../">
             
-                <a href="../../concepts/">
+                <a href="../">
             
                     
                     コンセプト
@@ -208,9 +204,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.5.1" data-path="../../concepts/configuration/overview.html">
+        <li class="chapter active" data-level="1.4.5.1" data-path="overview.html">
             
-                <a href="../../concepts/configuration/overview.html">
+                <a href="overview.html">
             
                     
                     Configurationベストプラクティス
@@ -335,9 +331,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6" data-path="../">
+        <li class="chapter " data-level="1.6" data-path="../../tutorials/">
             
-                <a href="../">
+                <a href="../../tutorials/">
             
                     
                     Tutorials
@@ -349,9 +345,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1" data-path="./">
+        <li class="chapter " data-level="1.6.1" data-path="../../tutorials/kubernetes_basics/">
             
-                <a href="./">
+                <a href="../../tutorials/kubernetes_basics/">
             
                     
                     Kubernetes入門
@@ -363,9 +359,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.6.1.1" data-path="1_create_a_cluster.html">
+        <li class="chapter " data-level="1.6.1.1" data-path="../../tutorials/kubernetes_basics/1_create_a_cluster.html">
             
-                <a href="1_create_a_cluster.html">
+                <a href="../../tutorials/kubernetes_basics/1_create_a_cluster.html">
             
                     
                     1. Cluster作成
@@ -376,9 +372,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6.1.2" data-path="2_deploy_an_app.html">
+        <li class="chapter " data-level="1.6.1.2" data-path="../../tutorials/kubernetes_basics/2_deploy_an_app.html">
             
-                <a href="2_deploy_an_app.html">
+                <a href="../../tutorials/kubernetes_basics/2_deploy_an_app.html">
             
                     
                     2. アプリケーションデプロイ
@@ -389,9 +385,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.3" data-path="3_explore_your_app.html">
+        <li class="chapter " data-level="1.6.1.3" data-path="../../tutorials/kubernetes_basics/3_explore_your_app.html">
             
-                <a href="3_explore_your_app.html">
+                <a href="../../tutorials/kubernetes_basics/3_explore_your_app.html">
             
                     
                     3. PodとNode
@@ -402,9 +398,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.4" data-path="4_expose_your_app_publicly.html">
+        <li class="chapter " data-level="1.6.1.4" data-path="../../tutorials/kubernetes_basics/4_expose_your_app_publicly.html">
             
-                <a href="4_expose_your_app_publicly.html">
+                <a href="../../tutorials/kubernetes_basics/4_expose_your_app_publicly.html">
             
                     
                     4. アプリケーションの公開
@@ -415,9 +411,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.5" data-path="5_scale_your_app.html">
+        <li class="chapter " data-level="1.6.1.5" data-path="../../tutorials/kubernetes_basics/5_scale_your_app.html">
             
-                <a href="5_scale_your_app.html">
+                <a href="../../tutorials/kubernetes_basics/5_scale_your_app.html">
             
                     
                     5. スケール
@@ -428,9 +424,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.6.1.6" data-path="6_update_your_app.html">
+        <li class="chapter " data-level="1.6.1.6" data-path="../../tutorials/kubernetes_basics/6_update_your_app.html">
             
-                <a href="6_update_your_app.html">
+                <a href="../../tutorials/kubernetes_basics/6_update_your_app.html">
             
                     
                     6. アプリケーションの更新
@@ -598,7 +594,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >2. アプリケーションデプロイ</a>
+        <a href="../.." >Configurationベストプラクティス</a>
     </h1>
 </div>
 
@@ -613,37 +609,23 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30C7;&#x30D7;&#x30ED;&#x30A4;">&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30C7;&#x30D7;&#x30ED;&#x30A4;</h1>
-<h1 id="kubectl&#x3092;&#x4F7F;&#x3063;&#x305F;deployment&#x306E;&#x4F5C;&#x6210;">kubectl&#x3092;&#x4F7F;&#x3063;&#x305F;Deployment&#x306E;&#x4F5C;&#x6210;</h1>
-<p><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-intro/" target="_blank">https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-intro/</a></p>
-<h2 id="&#x76EE;&#x6A19;">&#x76EE;&#x6A19;</h2>
+                                <h1 id="configuration&#x30D9;&#x30B9;&#x30C8;&#x30D7;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30B9;">Configuration&#x30D9;&#x30B9;&#x30C8;&#x30D7;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30B9;</h1>
+<p>&#x3053;&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x306F;user-guide&#x3084;getting-started&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3084;&#x4F8B;&#x3067;&#x5C0E;&#x5165;&#x3055;&#x308C;&#x305F;Configuration&#x306E;&#x30D9;&#x30B9;&#x30C8;&#x30D7;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30B9;&#x3092;&#x4E00;&#x7B87;&#x6240;&#x306B;&#x307E;&#x3068;&#x3081;&#x305F;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x306F;&#x751F;&#x304D;&#x3066;&#x3044;&#x308B;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x306A;&#x306E;&#x3067;&#x3001;&#x3082;&#x3057;&#x4FBF;&#x5229;&#x3060;&#x3051;&#x3069;&#x3053;&#x3053;&#x306B;&#x306A;&#x3044;&#x30C8;&#x30D4;&#x30C3;&#x30AF;&#x306A;&#x3069;&#x304C;&#x3042;&#x308C;&#x3070;Issue&#x3084;PR&#x3092;&#x9001;&#x3063;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<h1 id="&#x4E00;&#x822C;&#x7684;&#x306A;tips">&#x4E00;&#x822C;&#x7684;&#x306A;Tips</h1>
 <ul>
-<li>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;Deployment&#x306B;&#x3064;&#x3044;&#x3066;&#x5B66;&#x3076;</li>
-<li>kubectl&#x3092;&#x4F7F;&#x3063;&#x3066;Kubernetes&#x306B;&#x6700;&#x521D;&#x306E;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30C7;&#x30D7;&#x30ED;&#x30A4;&#x3059;&#x308B;</li>
+<li>Configuration&#x306E;&#x5B9A;&#x7FA9;&#x306B;&#x306F;&#x3001;&#x6700;&#x65B0;&#x306E;&#x5B89;&#x5B9A;API&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;(&#x73FE;&#x5728;&#x306F;v1)&#x3002;</li>
+<li>Configuration&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x306B;&#x9001;&#x4FE1;&#x3055;&#x308C;&#x308B;&#x524D;&#x306B;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x7BA1;&#x7406;&#x3055;&#x308C;&#x308B;&#x3079;&#x304D;&#x3002;&#x3053;&#x308C;&#x3067;&#x5FC5;&#x8981;&#x306A;&#x3089;&#x3059;&#x3050;&#x306B;&#x30ED;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x307E;&#x305F;&#x3001;&#x518D;&#x4F5C;&#x6210;&#x3084;&#x5FA9;&#x5143;&#x3082;&#x52A9;&#x3051;&#x307E;&#x3059;&#x3002;</li>
+<li>JSON&#x3088;&#x308A;YAML&#x3067;&#x66F8;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x307B;&#x3068;&#x3093;&#x3069;&#x306E;&#x5834;&#x5408;&#x3067;&#x304A;&#x4E92;&#x3044;&#x5909;&#x63DB;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;YAML&#x306E;&#x65B9;&#x304C;&#x4EBA;&#x306B;&#x89AA;&#x5207;&#x3067;&#x3059;&#x3002;</li>
+<li>&#x95A2;&#x4FC2;&#x3059;&#x308B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4E00;&#x7DD2;&#x306B;&#x3072;&#x3068;&#x3064;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x307E;&#x3068;&#x3081;&#x308B;&#x306E;&#x306F;&#x610F;&#x5473;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x65B9;&#x6CD5;&#x306F;&#x5206;&#x5272;&#x3055;&#x308C;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3088;&#x308A;&#x7BA1;&#x7406;&#x304C;&#x7C21;&#x5358;&#x3067;&#x3059;&#x3002;&#x4F8B;&#x3068;&#x3057;&#x3066;<a href="https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook/all-in-one/guestbook-all-in-one.yaml" target="_blank">guestbook-all-in-one.yaml</a>&#x3092;&#x898B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;(Note also that many kubectl commands can be called on a directory, and so you can also call kubectl create on a directory of config files&#x2014; see below for more detail)&#x3002;</li>
+<li>&#x4E0D;&#x5FC5;&#x8981;&#x306A;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x306F;&#x8A2D;&#x5B9A;&#x3057;&#x306A;&#x3044;&#x3067;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&#x8A2D;&#x5B9A;&#x3092;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x3001;&#x30DF;&#x30CB;&#x30DE;&#x30E0;&#x306B;&#x3057;&#x3066;&#x30A8;&#x30E9;&#x30FC;&#x3092;&#x6E1B;&#x3089;&#x3059;&#x305F;&#x3081;&#x3067;&#x3059;&#x3002;For example, omit the selector and labels in a <code>ReplicationController</code> if you want them to be the same as the labels in its <code>podTemplate</code>, since those fields are populated from the <code>podTemplate</code> labels by default. See the <a href="https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook/" target="_blank">guestbook app&#x2019;s</a> .yaml files for some <a href="https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook/frontend-deployment.yaml" target="_blank">examples</a> of this.</li>
+<li>Put an object description in an annotation to allow better introspection.</li>
 </ul>
-<h2 id="kubernetes-deployments">Kubernetes Deployments</h2>
-<p>&#x524D;&#x56DE;Kubernetes&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x305F;&#x306E;&#x3067;&#x3001;&#x305D;&#x306E;&#x4E0A;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5316;&#x3055;&#x308C;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30C7;&#x30D7;&#x30ED;&#x30A4;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
-&#x305D;&#x308C;&#x306B;&#x306F;&#x3001;Kubermentes&#x306E;<strong>Deployment</strong>&#x3092;&#x4F5C;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
-Deployment&#x306F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306E;&#x4F5C;&#x6210;&#x3068;&#x66F4;&#x65B0;&#x306E;&#x8CAC;&#x52D9;&#x3092;&#x62C5;&#x3044;&#x307E;&#x3059;&#x3002;
-&#x4E00;&#x5EA6;Deployment&#x3092;&#x4F5C;&#x308C;&#x3070;&#x3001;Kubernetes&#x306E;Master&#x306F;Deployment&#x306B;&#x3088;&#x3063;&#x3066;&#x4F5C;&#x3089;&#x308C;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x306E;&#x500B;&#x3005;&#x306E;&#x30CE;&#x30FC;&#x30C9;&#x4E0A;&#x306B;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x4E00;&#x5EA6;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x304C;&#x4F5C;&#x3089;&#x308C;&#x305F;&#x3089;&#x3001;Kubernetes Deployment Controller&#x306F;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x76E3;&#x8996;&#x3057;&#x7D9A;&#x3051;&#x307E;&#x3059;&#x3002;
-&#x3082;&#x3057;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x3082;&#x3064;Node&#x304C;&#x843D;&#x3061;&#x305F;&#x308A;&#x524A;&#x9664;&#x3055;&#x308C;&#x305F;&#x308A;&#x3057;&#x305F;&#x3089;&#x3001;Deployment&#x306F;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x3092;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;&#x3002;
-<strong>&#x3053;&#x308C;&#x306F;&#x30DE;&#x30B7;&#x30F3;&#x306E;&#x969C;&#x5BB3;&#x3084;&#x30E1;&#x30F3;&#x30C6;&#x30CA;&#x30F3;&#x30B9;&#x3092;&#x6271;&#x3046;&#x305F;&#x3081;&#x306E;&#x81EA;&#x5DF1;&#x56DE;&#x5FA9;&#x30E1;&#x30AB;&#x30CB;&#x30BA;&#x30E0;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x307E;&#x3059;&#x3002;</strong></p>
-<p>&#x30D7;&#x30EA;&#x30AA;&#x30FC;&#x30B1;&#x30B9;&#x30C8;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x4E16;&#x754C;&#x3067;&#x306F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x958B;&#x59CB;&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x304C;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#x304C;&#x3001;&#x305D;&#x308C;&#x3089;&#x306E;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x306F;&#x30DE;&#x30B7;&#x30F3;&#x969C;&#x5BB3;&#x304B;&#x3089;&#x306E;&#x5FA9;&#x65E7;&#x306F;&#x884C;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
-&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306E;&#x4F5C;&#x6210;&#x3068;Node&#x3067;&#x7A3C;&#x50CD;&#x72B6;&#x614B;&#x3092;&#x4FDD;&#x3064;&#x3053;&#x3068;&#x306B;&#x3088;&#x308A;&#x3001;Kubernetes Deployment&#x306F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x7BA1;&#x7406;&#x306B;&#x3064;&#x3044;&#x3066;&#x6839;&#x672C;&#x304B;&#x3089;&#x7570;&#x306A;&#x308B;&#x30A2;&#x30D7;&#x30ED;&#x30FC;&#x30C1;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<h2 id="kubernetes&#x3078;&#x306E;&#x30C7;&#x30D7;&#x30ED;&#x30A4;">Kubernetes&#x3078;&#x306E;&#x30C7;&#x30D7;&#x30ED;&#x30A4;</h2>
-<p><img src="https://kubernetes.io/docs/tutorials/kubernetes-basics/public/images/module_02_first_app.svg" alt="Deployment"></p>
-<p>Kubernetes&#x306E;CLI&#x3067;&#x3042;&#x308B;<strong>kubectl</strong>&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x3067;Deployment&#x306E;&#x4F5C;&#x6210;&#x3068;&#x7BA1;&#x7406;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
-kubectl&#x306F;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x3068;&#x901A;&#x4FE1;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;Kubernetes API&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;
-&#x3053;&#x306E;&#x7AE0;&#x3067;&#x306F;Kubernetes&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x52D5;&#x4F5C;&#x3055;&#x305B;&#x308B;&#x305F;&#x3081;&#x306E;Deployment&#x306E;&#x4F5C;&#x6210;&#x306B;&#x5FC5;&#x8981;&#x306A;kubectl&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B66;&#x3073;&#x307E;&#x3059;&#x3002;</p>
-<p>Deployment&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3068;&#x304D;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3068;&#x8D77;&#x52D5;&#x3057;&#x305F;&#x3044;replica&#x6570;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
-&#x3053;&#x308C;&#x3089;&#x306E;&#x60C5;&#x5831;&#x306F;&#x3042;&#x3068;&#x3067;Deployment&#x3092;&#x66F4;&#x65B0;&#x3057;&#x3066;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
-5&#x3001;6&#x7AE0;&#x3067;Deployment&#x306E;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x3084;&#x66F4;&#x65B0;&#x306E;&#x65B9;&#x6CD5;&#x3092;&#x8B70;&#x8AD6;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<p>&#x79C1;&#x305F;&#x3061;&#x306E;&#x6700;&#x521D;&#x306E;Deployment&#x3067;&#x306F;&#x3001;Node.js&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;Docker&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;
-&#x30BD;&#x30FC;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3068;Dockerfile&#x306F;<a href="https://github.com/kubernetes/kubernetes-bootcamp" target="_blank">GitHub repository</a>&#x306B;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
-<p>Deployment&#x306B;&#x3064;&#x3044;&#x3066;&#x5B66;&#x3073;&#x307E;&#x3057;&#x305F;&#x3002;&#x305D;&#x308C;&#x3067;&#x306F;&#x30AA;&#x30F3;&#x30E9;&#x30A4;&#x30F3;&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;&#x3067;&#x6700;&#x521D;&#x306E;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x30C7;&#x30D7;&#x30ED;&#x30A4;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;</p>
-<h1 id="&#x30A4;&#x30F3;&#x30BF;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30D6;&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;">&#x30A4;&#x30F3;&#x30BF;&#x30E9;&#x30AF;&#x30C6;&#x30A3;&#x30D6;&#x30C1;&#x30E5;&#x30FC;&#x30C8;&#x30EA;&#x30A2;&#x30EB;</h1>
-<p><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-interactive/" target="_blank">https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-interactive/</a></p>
+<h1 id="&#x751F;pod-vs-replication-controller&#x3068;job">&#x751F;Pod VS Replication Controller&#x3068;Job</h1>
+<h1 id="service">Service</h1>
+<h1 id="label">Label</h1>
+<h1 id="&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x30A4;&#x30E1;&#x30FC;&#x30B8;">&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x30A4;&#x30E1;&#x30FC;&#x30B8;</h1>
+<h1 id="kubectl">kubectl</h1>
 
                                 
                                 </section>
@@ -671,14 +653,6 @@ kubectl&#x306F;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x3068;&#x901A;&#x4FE1;&#x3059;&
 
             
                 
-                <a href="1_create_a_cluster.html" class="navigation navigation-prev " aria-label="Previous page: 1. Cluster作成">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="3_explore_your_app.html" class="navigation navigation-next " aria-label="Next page: 3. PodとNode">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -687,7 +661,7 @@ kubectl&#x306F;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x3068;&#x901A;&#x4FE1;&#x3059;&
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. アプリケーションデプロイ","level":"1.6.1.2","depth":3,"next":{"title":"3. PodとNode","level":"1.6.1.3","depth":3,"path":"tutorials/kubernetes_basics/3_explore_your_app.md","ref":"tutorials/kubernetes_basics/3_explore_your_app.md","articles":[]},"previous":{"title":"1. Cluster作成","level":"1.6.1.1","depth":3,"path":"tutorials/kubernetes_basics/1_create_a_cluster.md","ref":"tutorials/kubernetes_basics/1_create_a_cluster.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tutorials/kubernetes_basics/2_deploy_an_app.md","mtime":"2017-05-19T08:12:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-23T05:36:38.193Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Configurationベストプラクティス","level":"1.4.5.1","depth":3,"next":{"title":"Managing Compute Resources for Containers","level":"1.4.5.2","depth":3,"ref":"","articles":[]},"previous":{"title":"Configuration","level":"1.4.5","depth":2,"ref":"","articles":[{"title":"Configurationベストプラクティス","level":"1.4.5.1","depth":3,"path":"concepts/configuration/overview.md","ref":"concepts/configuration/overview.md","articles":[]},{"title":"Managing Compute Resources for Containers","level":"1.4.5.2","depth":3,"ref":"","articles":[]},{"title":"Assigning Pods to Nodes","level":"1.4.5.3","depth":3,"ref":"","articles":[]},{"title":"Secrets","level":"1.4.5.4","depth":3,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/configuration/overview.md","mtime":"2017-05-23T05:36:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-23T05:36:38.193Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
