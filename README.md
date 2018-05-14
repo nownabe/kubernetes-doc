@@ -9,11 +9,11 @@ npm install -g gitbook-cli
 Run development server.
 
 ```bash
-./serve
+npm start
 ```
 
 Build.
 
 ```bash
-./build
+npm run build
 ```
