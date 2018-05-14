@@ -7,7 +7,9 @@
   * [Overview]()
   * [Kubernetes Architecture]()
   * [Containers]()
-  * [Workloads]()
+  * Workloads
+    * Controllers
+      * [DaemonSet](concepts/workloads/controllers/daemonset.md)
   * Configuration
     * [Configurationベストプラクティス](concepts/configuration/overview.md)
     * [Managing Compute Resources for Containers]()
