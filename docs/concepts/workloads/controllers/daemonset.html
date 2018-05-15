@@ -1,0 +1,887 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>DaemonSet · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Home
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Setup
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    コンセプト
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    Overview
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    Kubernetes Architecture
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    Workloads
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" >
+            
+                <span>
+            
+                    
+                    Controllers
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.4.1.1" data-path="daemonset.html">
+            
+                <a href="daemonset.html">
+            
+                    
+                    DaemonSet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                    Configuration
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../configuration/overview.html">
+            
+                <a href="../../configuration/overview.html">
+            
+                    
+                    Configurationベストプラクティス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" >
+            
+                <span>
+            
+                    
+                    Managing Compute Resources for Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" >
+            
+                <span>
+            
+                    
+                    Assigning Pods to Nodes
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" >
+            
+                <span>
+            
+                    
+                    Secrets
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    Configuration
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" >
+            
+                <span>
+            
+                    
+                    Services, Load Balancing, and Networking
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" >
+            
+                <span>
+            
+                    
+                    Storage
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" >
+            
+                <span>
+            
+                    
+                    Cluster Administration
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    Tasks
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../tutorials/">
+            
+                <a href="../../../tutorials/">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../tutorials/kubernetes_basics/">
+            
+                <a href="../../../tutorials/kubernetes_basics/">
+            
+                    
+                    Kubernetes入門
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../../tutorials/kubernetes_basics/1_create_a_cluster.html">
+            
+                <a href="../../../tutorials/kubernetes_basics/1_create_a_cluster.html">
+            
+                    
+                    1. Cluster作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../../tutorials/kubernetes_basics/2_deploy_an_app.html">
+            
+                <a href="../../../tutorials/kubernetes_basics/2_deploy_an_app.html">
+            
+                    
+                    2. アプリケーションデプロイ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../../../tutorials/kubernetes_basics/3_explore_your_app.html">
+            
+                <a href="../../../tutorials/kubernetes_basics/3_explore_your_app.html">
+            
+                    
+                    3. PodとNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../../../tutorials/kubernetes_basics/4_expose_your_app_publicly.html">
+            
+                <a href="../../../tutorials/kubernetes_basics/4_expose_your_app_publicly.html">
+            
+                    
+                    4. アプリケーションの公開
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../../../tutorials/kubernetes_basics/5_scale_your_app.html">
+            
+                <a href="../../../tutorials/kubernetes_basics/5_scale_your_app.html">
+            
+                    
+                    5. スケール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="../../../tutorials/kubernetes_basics/6_update_your_app.html">
+            
+                <a href="../../../tutorials/kubernetes_basics/6_update_your_app.html">
+            
+                    
+                    6. アプリケーションの更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    Online Training Course
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    Hello Minikube
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    Object Management Using kubectl
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    Stateless Applications
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    Stateful Applications
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" >
+            
+                <span>
+            
+                    
+                    Clusters
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" >
+            
+                <span>
+            
+                    
+                    Services
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Reference
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Samples
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >DaemonSet</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="daemonset">DaemonSet</h1>
+<h1 id="what-is-a-daemonset">What is a DaemonSet?</h1>
+<p><em>DaemonSet</em>&#x306F;&#x3059;&#x3079;&#x3066;(&#x307E;&#x305F;&#x306F;&#x3044;&#x304F;&#x3064;&#x304B;&#x306E;)Node&#x3067;Pod&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x4FDD;&#x8A3C;&#x3057;&#x307E;&#x3059;&#x3002;
+Node&#x304C;Cluster&#x306B;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x308B;&#x3068;&#x3001;Pod&#x306F;&#x305D;&#x308C;&#x3089;&#x306B;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+Node&#x304C;Cluster&#x304B;&#x3089;&#x524A;&#x9664;&#x3055;&#x308C;&#x308B;&#x3068;&#x3001;Pod&#x306F;Garbage Collection&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+DaemonSet&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;&#x3068;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;Pod&#x3082;&#x524A;&#x9664;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>DaemonSet&#x306E;&#x5178;&#x578B;&#x7684;&#x306A;&#x7528;&#x9014;&#x306F;</p>
+<ul>
+<li><code>glusterd</code>&#x3084;<code>ceph</code>&#x306A;&#x3069;&#x306E;&#x30B9;&#x30C8;&#x30EC;&#x30FC;&#x30B8;&#x30C7;&#x30FC;&#x30E2;&#x30F3;&#x3092;&#x5404;&#x30CE;&#x30FC;&#x30C9;&#x3067;&#x5B9F;&#x884C;</li>
+<li><code>fluentd</code>&#x3084;<code>logstash</code>&#x306A;&#x3069;&#x306E;&#x30ED;&#x30B0;&#x53CE;&#x96C6;&#x30C7;&#x30FC;&#x30E2;&#x30F3;&#x3092;&#x5404;&#x30CE;&#x30FC;&#x30C9;&#x3067;&#x5B9F;&#x884C;</li>
+<li>Prometheus Node Exporter&#x3001;<code>collectd</code>&#x3001;Datadog agent&#x3001;New Relic agent&#x3001;Ganglia&#x306E;<code>gmond</code>&#x306A;&#x3069;&#x306E;&#x30E2;&#x30CB;&#x30BF;&#x30EA;&#x30F3;&#x30B0;&#x30C7;&#x30FC;&#x30E2;&#x30F3;&#x3092;&#x5404;&#x30CE;&#x30FC;&#x30C9;&#x3067;&#x5B9F;&#x884C;</li>
+</ul>
+<p>&#x5358;&#x7D14;&#x306A;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x306F;&#x5168;&#x3066;&#x306E;&#x30CE;&#x30FC;&#x30C9;&#x3092;&#x30AB;&#x30D0;&#x30FC;&#x3059;&#x308B;&#x3072;&#x3068;&#x3064;&#x306E;DaemonSet&#x304C;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30BF;&#x30A4;&#x30D7;&#x306E;&#x30C7;&#x30FC;&#x30E2;&#x30F3;&#x306B;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x3088;&#x308A;&#x8907;&#x96D1;&#x306A;&#x8A2D;&#x5B9A;&#x3067;&#x306F;1&#x3064;&#x306E;&#x7A2E;&#x985E;&#x306E;&#x30C7;&#x30FC;&#x30E2;&#x30F3;&#x306B;&#x8907;&#x6570;&#x306E;DaemonSet&#x3092;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;&#x30CF;&#x30FC;&#x30C9;&#x30A6;&#x30A7;&#x30A2;&#x306E;&#x7A2E;&#x985E;&#x306B;&#x3088;&#x3063;&#x3066;&#x7570;&#x306A;&#x308B;&#x30D5;&#x30E9;&#x30B0;&#x3084;&#x7570;&#x306A;&#x308B;&#x30E1;&#x30E2;&#x30EA;&#x3001;CPU&#x8981;&#x6C42;&#x3068;&#x5171;&#x306B;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<h1 id="writing-a-daemonset-spec">Writing a DaemonSet Spec</h1>
+<h2 id="create-a-daemonset">Create a DaemonSet</h2>
+<p>DaemonSet&#x306F;YAML&#x3067;&#x8A18;&#x8FF0;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x4F8B;&#x3048;&#x3070;&#x3001;&#x4E0B;&#x306E;<code>daemonset.yaml</code>&#x306F;<code>fluentd-elasticsearch</code>&#x306E;Docker&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;DaemonSet&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> apps/v1
+<span class="hljs-attr">kind:</span> DaemonSet
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> fluentd-elasticsearch
+<span class="hljs-attr">  namespace:</span> kube-system
+<span class="hljs-attr">  labels:</span>
+<span class="hljs-attr">    k8s-app:</span> fluentd-logging
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    matchLabels:</span>
+<span class="hljs-attr">      name:</span> fluentd-elasticsearch
+<span class="hljs-attr">  template:</span>
+<span class="hljs-attr">    metadata:</span>
+<span class="hljs-attr">      labels:</span>
+<span class="hljs-attr">        name:</span> fluentd-elasticsearch
+<span class="hljs-attr">    spec:</span>
+<span class="hljs-attr">      tolerations:</span>
+<span class="hljs-attr">      - key:</span> node-role.kubernetes.io/master
+<span class="hljs-attr">        effect:</span> NoSchedule
+<span class="hljs-attr">      containers:</span>
+<span class="hljs-attr">      - name:</span> fluentd-elasticsearch
+<span class="hljs-attr">        image:</span> k8s.gcr.io/fluentd-elasticsearch:<span class="hljs-number">1.20</span>
+<span class="hljs-attr">        resources:</span>
+<span class="hljs-attr">          limits:</span>
+<span class="hljs-attr">            memory:</span> <span class="hljs-number">200</span>Mi
+<span class="hljs-attr">          requests:</span>
+<span class="hljs-attr">            cpu:</span> <span class="hljs-number">100</span>m
+<span class="hljs-attr">            memory:</span> <span class="hljs-number">200</span>Mi
+<span class="hljs-attr">        volumeMounts:</span>
+<span class="hljs-attr">        - name:</span> varlog
+<span class="hljs-attr">          mountPath:</span> /var/log
+<span class="hljs-attr">        - name:</span> varlibdockercontainers
+<span class="hljs-attr">          mountPath:</span> /var/lib/docker/containers
+<span class="hljs-attr">          readOnly:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">      terminationGracePeriodSeconds:</span> <span class="hljs-number">30</span>
+<span class="hljs-attr">      volumes:</span>
+<span class="hljs-attr">      - name:</span> varlog
+<span class="hljs-attr">        hostPath:</span>
+<span class="hljs-attr">          path:</span> /var/log
+<span class="hljs-attr">      - name:</span> varlibdockercontainers
+<span class="hljs-attr">        hostPath:</span>
+<span class="hljs-attr">          path:</span> /var/lib/docker/containers
+</code></pre>
+<ul>
+<li>YAML&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x57FA;&#x3044;&#x3066;DaemonSet&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;: <code>kubectl create -f daemonset.yaml</code></li>
+</ul>
+<h2 id="required-fields">Required Fields</h2>
+<p>&#x4ED6;&#x306E;&#x3059;&#x3079;&#x3066;&#x306E;Kubernetes&#x306E;&#x8A2D;&#x5B9A;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;DaemonSet&#x306B;<code>apiVersion</code>&#x3001;<code>kind</code>&#x3001;<code>metadata</code>&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x306F;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;
+&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x52D5;&#x4F5C;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x4E00;&#x822C;&#x7684;&#x306A;&#x60C5;&#x5831;&#x3067;&#x3059;&#x3002;
+<a href="https://kubernetes.io/docs/user-guide/deploying-applications/" target="_blank">deploying applications</a>&#x3001;<a href="https://kubernetes.io/docs/tasks/" target="_blank">configuring containers</a>&#x3001;<a href="https://kubernetes.io/docs/concepts/overview/object-management-kubectl/overview/" target="_blank">object management using kubectl</a>&#x3092;&#x898B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<p>DaemonSet&#x306F;<a href="https://github.com/kubernetes/community/blob/master/contributors/devel/api-conventions.md#spec-and-status" target="_blank"><code>.spec</code></a>&#x30BB;&#x30AF;&#x30B7;&#x30E7;&#x30F3;&#x3082;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="pod-template">Pod Template</h2>
+<p><code>.spec.template</code>&#x306F;<code>.spec</code>&#x306E;&#x5FC5;&#x9808;&#x9805;&#x76EE;&#x3067;&#x3059;&#x3002;</p>
+<p><code>.spec.template</code>&#x306F;<a href="https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/#pod-templates" target="_blank">Pod&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;</a>&#x3067;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x306F;<code>apiVersion</code>&#x3068;<code>kind</code>&#x3092;&#x6301;&#x305F;&#x305A;&#x30CD;&#x30B9;&#x30C8;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x3092;&#x9664;&#x304D;<a href="https://kubernetes.io/docs/concepts/workloads/pods/pod/" target="_blank">Pod</a>&#x306E;&#x30B9;&#x30AD;&#x30FC;&#x30DE;&#x3068;&#x540C;&#x4E00;&#x3067;&#x3059;&#x3002;</p>
+<p>Pod&#x306B;&#x5FC5;&#x8981;&#x306A;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x306B;&#x52A0;&#x3048;&#x3066;&#x3001;DaemonSet&#x306E;Pod&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x306F;&#x9069;&#x5207;&#x306A;label&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+(<a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/#pod-selector" target="_blank">pod selector</a>&#x3092;&#x898B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;)</p>
+<p>DaemonSet&#x306E;Pod&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x306F;<a href="https://kubernetes.io/docs/user-guide/pod-states" target="_blank"><code>RestartPolicy</code></a>&#x304C;<code>Always</code>&#x3067;&#x3042;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x6307;&#x5B9A;&#x304C;&#x306A;&#x304B;&#x3063;&#x305F;&#x5834;&#x5408;&#x306F;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;<code>Always</code>&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="pod-selector">Pod Selector</h2>
+<p><code>.spec.selector</code>&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x306F;Pod&#x306E;&#x30BB;&#x30EC;&#x30AF;&#x30BF;&#x3067;&#x3059;&#x3002;
+<a href="https://kubernetes.io/docs/concepts/jobs/run-to-completion-finite-workloads/" target="_blank">Job</a>&#x306E;<code>.spec.selector</code>&#x3068;&#x540C;&#x69D8;&#x3067;&#x3059;&#x3002;</p>
+<p>Kubernetes 1.8&#x304B;&#x3089;<code>.spec.template</code>&#x306E;&#x30E9;&#x30D9;&#x30EB;&#x3068;&#x4E00;&#x81F4;&#x3059;&#x308B;Pod&#x30BB;&#x30EC;&#x30AF;&#x30BF;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x5024;&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x306A;&#x3044;&#x3068;&#x304D;&#x306B;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x306F;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x30BB;&#x30EC;&#x30AF;&#x30BF;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x8A2D;&#x5B9A;&#x306F;<code>kubectl apply</code>&#x3068;&#x4E92;&#x63DB;&#x6027;&#x304C;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3067;&#x3057;&#x305F;&#x3002;
+&#x307E;&#x305F;&#x3001;&#x4E00;&#x5EA6;DaemonSet&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x308B;&#x3068;&#x305D;&#x306E;<code>.spec.selector</code>&#x306F;&#x5909;&#x66F4;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;
+Pod&#x30BB;&#x30EC;&#x30AF;&#x30BF;&#x306E;&#x5909;&#x66F4;&#x306F;&#x610F;&#x56F3;&#x3057;&#x306A;&#x3044;Pod&#x306E;&#x5B64;&#x7ACB;&#x3092;&#x5F15;&#x304D;&#x8D77;&#x3053;&#x3057;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x3092;&#x6DF7;&#x4E71;&#x3055;&#x305B;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<p><code>.spec.selector</code>&#x306F;2&#x3064;&#x306E;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3092;&#x6301;&#x3064;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3067;&#x3059;&#x3002;</p>
+<ul>
+<li><code>matchLabels</code> - <a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/" target="_blank">ReplicationController</a>&#x306E;<code>.spec.selector</code>&#x3068;&#x540C;&#x69D8;&#x3067;&#x3059;&#x3002;</li>
+<li><code>matchExpressions</code> - &#x30AD;&#x30FC;&#x306E;&#x6307;&#x5B9A;&#x306B;&#x3088;&#x308A;&#x3088;&#x308A;&#x6D17;&#x7DF4;&#x3055;&#x308C;&#x305F;&#x30BB;&#x30EC;&#x30AF;&#x30BF;&#x306E;&#x69CB;&#x7BC9;&#x3092;&#x8A31;&#x53EF;&#x3057;&#x307E;&#x3059;&#x3002;&#x5024;&#x4E00;&#x89A7;&#x3068;&#x30AD;&#x30FC;&#x3068;&#x5024;&#x306B;&#x7D10;&#x3065;&#x304F;&#x30AA;&#x30DA;&#x30EC;&#x30FC;&#x30BF;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<p>&#x4E21;&#x65B9;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x3068;&#x304D;&#x306F;AND&#x3067;&#x51E6;&#x7406;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p><code>.spec.selector</code>&#x304C;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x3068;&#x304D;&#x3001;&#x5FC5;&#x305A;<code>.spec.template.metadata.labels</code>&#x3068;&#x4E00;&#x81F4;&#x3057;&#x3066;&#x3044;&#x306A;&#x3051;&#x308C;&#x3070;&#x306A;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x4E00;&#x81F4;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x30B3;&#x30F3;&#x30D5;&#x30A3;&#x30B0;&#x306F;API&#x306B;&#x62D2;&#x5426;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x307E;&#x305F;&#x3001;&#x901A;&#x5E38;&#x306F;&#x76F4;&#x63A5;&#x3001;&#x4ED6;&#x306E;DaemonSet&#x7D4C;&#x7531;&#x3001;ReplicaSet&#x306E;&#x3088;&#x3046;&#x306A;&#x4ED6;&#x306E;Controller&#x7D4C;&#x7531;&#x306B;&#x95A2;&#x308F;&#x3089;&#x305A;&#x3001;&#x3053;&#x306E;&#x30BB;&#x30EC;&#x30AF;&#x30BF;&#x3068;&#x4E00;&#x81F4;&#x3059;&#x308B;label&#x3092;&#x6301;&#x3064;Pod&#x3092;&#x4F5C;&#x308B;&#x3079;&#x304D;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x3055;&#x3082;&#x306A;&#x3051;&#x308C;&#x3070;&#x3001;DaemonSet&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x305D;&#x308C;&#x3089;&#x306E;Pod&#x304C;&#x305D;&#x306E;DaemonSet&#x306B;&#x3088;&#x3063;&#x3066;&#x4F5C;&#x3089;&#x308C;&#x305F;&#x3082;&#x306E;&#x3068;&#x8003;&#x3048;&#x307E;&#x3059;&#x3002;
+Kubernetes&#x306F;&#x30E6;&#x30FC;&#x30B6;&#x304C;&#x305D;&#x3046;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x9632;&#x304E;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x3053;&#x308C;&#x3092;&#x3057;&#x305F;&#x304F;&#x306A;&#x308B;1&#x3064;&#x306E;&#x30B1;&#x30FC;&#x30B9;&#x3068;&#x3057;&#x3066;&#x306F;&#x3001;&#x9055;&#x3046;&#x8A2D;&#x5B9A;&#x5024;&#x3092;&#x3082;&#x3064;Pod&#x3092;&#x30C6;&#x30B9;&#x30C8;&#x306E;&#x305F;&#x3081;&#x306B;&#x3042;&#x308B;&#x30CE;&#x30FC;&#x30C9;&#x306B;&#x624B;&#x52D5;&#x3067;&#x4F5C;&#x308B;&#x3068;&#x304D;&#x3067;&#x3059;&#x3002;</p>
+<h1 id="how-daemon-pods-are-scheduled">How Daemon Pods are Scheduled</h1>
+<p>&#x901A;&#x5E38;&#x306F;Pod&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x30DE;&#x30B7;&#x30F3;&#x306F;Kubernetes&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30E9;&#x306B;&#x9078;&#x629E;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x3057;&#x304B;&#x3057;&#x3001;DaemonSet&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306B;&#x3088;&#x3063;&#x3066;&#x4F5C;&#x3089;&#x308C;&#x305F;Pod&#x306F;&#x65E2;&#x306B;&#x30DE;&#x30B7;&#x30F3;&#x304C;&#x9078;&#x629E;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+(Pod&#x4F5C;&#x6210;&#x6642;&#x306B;<code>.spec.nodeName</code>&#x304C;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x3066;&#x3001;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30E9;&#x306B;&#x7121;&#x8996;&#x3055;&#x308C;&#x307E;&#x3059;)
+&#x305D;&#x308C;&#x306B;&#x3088;&#x308A;&#x3001;</p>
+<ul>
+<li>DaemonSet&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3067;&#x306F;Node&#x306E;<a href="https://kubernetes.io/docs/admin/node/#manual-node-administration" target="_blank"><code>unschedulable</code></a>&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x306F;&#x5C0A;&#x91CD;&#x3055;&#x308C;&#x307E;&#x305B;&#x3093;</li>
+<li>DaemonSet&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30E9;&#x304C;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x306A;&#x304F;&#x3066;&#x3082;Pod&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x306E;&#x3067;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x306E;&#x8D77;&#x52D5;&#x306E;&#x52A9;&#x3051;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;</li>
+</ul>
+<p>DaemonSet&#x306E;Pod&#x306F;<a href="https://kubernetes.io/docs/concepts/configuration/taint-and-toleration" target="_blank"><code>taints&#x3068;tolerations</code></a>&#x3092;&#x5C0A;&#x91CD;&#x3057;&#x307E;&#x3059;&#x304C;&#x3001;Pod&#x306F;&#x6B21;&#x306E;taints&#x306E;&#x305F;&#x3081;&#x306E;<code>NoExecute</code> tolerations&#x3092;&#x6301;&#x3061;&#x3001;<code>tolerationSeconds</code>&#x3092;&#x6301;&#x305F;&#x305A;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li><code>node.kubernetes.io/not-ready</code></li>
+<li><code>node.alpha.kubernetes.io/unreachable</code></li>
+</ul>
+<p>&#x3053;&#x308C;&#x306F;<code>TaintBasedEvictions</code>&#x6A5F;&#x80FD;(alpha)&#x304C;&#x6709;&#x52B9;&#x306A;&#x3068;&#x304D;&#x3001;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x5206;&#x65AD;&#x306E;&#x3088;&#x3046;&#x306A;Node&#x969C;&#x5BB3;&#x304C;&#x3042;&#x3063;&#x305F;&#x3068;&#x304D;&#x306B;Pod&#x304C;&#x8FFD;&#x3044;&#x51FA;&#x3055;&#x308C;&#x306A;&#x3044;&#x3053;&#x3068;&#x3092;&#x4FDD;&#x8A3C;&#x3057;&#x307E;&#x3059;&#x3002;
+(<code>TaintBasedEvictions</code>&#x304C;&#x7121;&#x52B9;&#x306E;&#x3068;&#x304D;&#x3082;&#x8FFD;&#x3044;&#x51FA;&#x3055;&#x308C;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;tolerations&#x3088;&#x308A;&#x3082;Node&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306B;&#x30CF;&#x30FC;&#x30C9;&#x30B3;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x305F;&#x632F;&#x308B;&#x821E;&#x3044;&#x3092;&#x3057;&#x307E;&#x3059;&#x3002;)</p>
+<p>&#x6B21;&#x306E;taints&#x3082;&#x6709;&#x52B9;&#x3067;&#x3059;&#x3002;</p>
+<ul>
+<li><code>node.kubernetes.io/memory-pressure</code></li>
+<li><code>node.kubernetes.io/disk-pressure</code></li>
+</ul>
+<p>critical pod&#x304C;&#x6709;&#x52B9;&#x3067;DaemonSet&#x306E;Pod&#x304C;critical&#x3068;&#x30E9;&#x30D9;&#x30EB;&#x4ED8;&#x3051;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x304D;&#x3001;Daemon Pod&#x306F;<code>node.kubernetes.io/out-of-disk</code>&#x306E;&#x305F;&#x3081;&#x306E;<code>NoSchedule</code> toleration&#x3068;&#x3068;&#x3082;&#x306B;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x3059;&#x3079;&#x3066;&#x306E;<code>NoSchedule</code> taint&#x306F;1.8&#x4EE5;&#x964D;&#x3067;<code>TaintNodesByCondition</code>&#x6A5F;&#x80FD;(alpha)&#x304C;&#x6709;&#x52B9;&#x306E;&#x3068;&#x304D;&#x306B;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p><code>node-role.kubernetes.io/master</code>&#x306E;<code>NoSchedule</code> toleration&#x306F;1.6&#x4EE5;&#x964D;&#x3067;&#x306F;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x306F;&#x306A;&#x3044;&#x305F;&#x3081;master node&#x306B;&#x30B9;&#x30B1;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;</p>
+<h1 id="communicating-with-daemon-pods">Communicating with Daemon Pods</h1>
+<p>DaemonSet&#x306E;Pod&#x3068;&#x901A;&#x4FE1;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x306F;&#x3044;&#x304F;&#x3064;&#x304B;&#x53EF;&#x80FD;&#x306A;&#x65B9;&#x6CD5;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li><strong>Push</strong>: DaemonSet&#x306E;Pod&#x3092;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x3088;&#x3046;&#x306A;&#x4ED6;&#x306E;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x9001;&#x4FE1;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x304C;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</li>
+<li><strong>NodeIP and Known Port</strong>: DaemonSet&#x306E;Pod&#x306F;<code>hostPort</code>&#x3092;&#x4F7F;&#x3048;&#x308B;&#x306E;&#x3067;&#x3001;Node&#x306E;IP&#x3067;&#x5230;&#x9054;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x306F;&#x4F55;&#x3089;&#x304B;&#x306E;&#x65B9;&#x6CD5;&#x3067;Node&#x306E;IP&#x3092;&#x77E5;&#x308A;&#x3001;&#x6163;&#x7FD2;&#x306B;&#x3088;&#x308A;&#x30DD;&#x30FC;&#x30C8;&#x3092;&#x3057;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</li>
+<li><strong>DNS</strong>: &#x540C;&#x3058;Pod selector&#x3067;<a href="https://kubernetes.io/docs/concepts/services-networking/service/#headless-services" target="_blank"><code>headless service</code></a>&#x3092;&#x4F5C;&#x308A;&#x3001;<code>endpoints</code>&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3092;&#x4F7F;&#x3046;&#x304B;DNS&#x306E;A&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3067;DaemonSet&#x3092;&#x767A;&#x898B;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+<li><strong>Service</strong>: &#x540C;&#x3058;Pod selector&#x3067;Service&#x3092;&#x4F5C;&#x308A;&#x3001;Service&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x306A;Node&#x306E;Daemon&#x306B;&#x5230;&#x9054;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;(&#x7279;&#x5B9A;&#x306E;Node&#x306B;&#x5230;&#x9054;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;)</li>
+</ul>
+<h1 id="updating-a-daemonset">Updating a DaemonSet</h1>
+<p>Node&#x306E;&#x30E9;&#x30D9;&#x30EB;&#x304C;&#x5909;&#x66F4;&#x3055;&#x308C;&#x308B;&#x3068;&#x3001;DaemonSet&#x306F;&#x305F;&#x3060;&#x3061;&#x306B;&#x65B0;&#x3057;&#x304F;&#x30DE;&#x30C3;&#x30C1;&#x3059;&#x308B;Node&#x306B;Pod&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x3001;&#x65B0;&#x3057;&#x304F;&#x30DE;&#x30C3;&#x30C1;&#x3057;&#x306A;&#x3044;Node&#x304B;&#x3089;Pod&#x3092;&#x524A;&#x9664;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>DaemonSet&#x304C;&#x4F5C;&#x6210;&#x3057;&#x305F;Pod&#x306F;&#x5909;&#x66F4;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3057;&#x304B;&#x3057;&#x3001;&#x3059;&#x3079;&#x3066;&#x306E;Pod&#x306E;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3092;&#x5909;&#x66F4;&#x3067;&#x304D;&#x308B;&#x308F;&#x3051;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x307E;&#x305F;&#x3001;DaemonSet&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x6B21;&#x56DE;Node&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;&#x3068;&#x304D;(&#x540C;&#x3058;&#x540D;&#x524D;&#x3067;&#x3042;&#x3063;&#x3066;&#x3082;)&#x5143;&#x306E;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>DaemonSet&#x3092;&#x524A;&#x9664;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3082;&#x3057;<code>kubeclt</code>&#x3067;<code>--cascade=false</code>&#x3092;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x3089;&#x3001;Pod&#x306F;Node&#x306B;&#x6B8B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x3057;&#x3066;&#x5225;&#x306E;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x65B0;&#x3057;&#x3044;DaemonSet&#x3092;&#x4F5C;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x5225;&#x306E;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x306E;&#x65B0;&#x3057;&#x3044;DaemonSet&#x306F;&#x30E9;&#x30D9;&#x30EB;&#x304C;&#x30DE;&#x30C3;&#x30C1;&#x3059;&#x308B;&#x3059;&#x3079;&#x3066;&#x306E;&#x65E2;&#x5B58;&#x306E;Pod&#x3092;&#x8A8D;&#x8B58;&#x3057;&#x307E;&#x3059;&#x3002;
+Pod&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x306B;&#x4E0D;&#x4E00;&#x81F4;&#x304C;&#x3042;&#x3063;&#x3066;&#x3082;&#x4FEE;&#x6B63;&#x3082;&#x524A;&#x9664;&#x3082;&#x3057;&#x307E;&#x305B;&#x3093;&#x3002;
+Node&#x306E;&#x524A;&#x9664;&#x304B;Pod&#x306E;&#x524A;&#x9664;&#x306B;&#x3088;&#x3063;&#x3066;&#x65B0;&#x3057;&#x3044;Pod&#x3092;&#x4F5C;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>Kubernetes 1.6&#x4EE5;&#x964D;&#x3067;&#x306F;DaemonSet&#x306E;<a href="https://kubernetes.io/docs/tasks/manage-daemon/update-daemon-set/" target="_blank"><code>&#x30ED;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x30A2;&#x30C3;&#x30D7;&#x30C7;&#x30FC;&#x30C8;</code></a>&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h1 id="alternatives-to-daemonset">Alternatives to DaemonSet</h1>
+<h2 id="init-scripts">Init Scripts</h2>
+<p>&#x76F4;&#x63A5;Daemon&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x30CE;&#x30FC;&#x30C9;&#x4E0A;&#x3067;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;Daemon&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+(<code>init</code>&#x3001;<code>upstartd</code>&#x3001;<code>systemd</code>&#x3092;&#x4F7F;&#x3063;&#x3066;)
+&#x3053;&#x308C;&#x306F;&#x5B8C;&#x74A7;&#x3067;&#x3059;&#x3002;
+&#x305F;&#x3060;&#x3057;&#x3001;&#x305D;&#x308C;&#x3089;&#x306B;&#x6BD4;&#x3079;&#x3066;DaemonSet&#x306F;&#x3044;&#x304F;&#x3064;&#x304B;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x540C;&#x3058;&#x65B9;&#x6CD5;&#x3067;Daemon&#x306E;&#x76E3;&#x8996;&#x3068;&#x30ED;&#x30B0;&#x7BA1;&#x7406;&#x304C;&#x53EF;&#x80FD;</li>
+<li>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x540C;&#x69D8;&#x306E;&#x8A2D;&#x5B9A;&#x3068;&#x30C4;&#x30FC;&#x30EB;(Pod Template&#x3084;<code>kubectl</code>)</li>
+<li>Resource limit&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x305F;Daemon&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3068;&#x306E;&#x5206;&#x96E2;&#x3092;&#x5F37;&#x5316;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x305F;&#x3060;&#x3057;&#x3001;&#x3053;&#x308C;&#x306F;Pod&#x3067;&#x306F;&#x306A;&#x3044;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3082;&#x9054;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;(&#x4F8B;&#x3048;&#x3070;Docker&#x3067;&#x76F4;&#x63A5;&#x8D77;&#x52D5;&#x3059;&#x308B;)</li>
+</ul>
+<h2 id="bare-pods">Bare Pods</h2>
+<p>&#x7279;&#x5B9A;&#x306E;&#x30CE;&#x30FC;&#x30C9;&#x4E0A;&#x306B;&#x76F4;&#x63A5;Pod&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x5B9F;&#x73FE;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x305F;&#x3060;&#x3057;&#x3001;DaemonSet&#x306F;Node&#x969C;&#x5BB3;&#x3084;&#x7834;&#x58CA;&#x7684;&#x306A;Node&#x30E1;&#x30F3;&#x30C6;&#x30CA;&#x30F3;&#x30B9;&#x3084;&#x30AB;&#x30FC;&#x30CD;&#x30EB;&#x30A2;&#x30C3;&#x30D7;&#x30B0;&#x30EC;&#x30FC;&#x30C9;&#x306A;&#x3069;&#x306E;&#x4F55;&#x3089;&#x304B;&#x306E;&#x7406;&#x7531;&#x3067;&#x7D42;&#x4E86;&#x3057;&#x305F;&#x308A;&#x524A;&#x9664;&#x3055;&#x308C;&#x305F;Pod&#x3092;&#x4EA4;&#x63DB;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x7406;&#x7531;&#x306B;&#x3088;&#x308A;&#x3001;&#x500B;&#x5225;&#x306E;Pod&#x3088;&#x308A;DaemonSet&#x3092;&#x4F7F;&#x3046;&#x3079;&#x304D;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="static-pods">Static Pods</h2>
+<p>Kubelet&#x304C;&#x76E3;&#x8996;&#x3057;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x66F8;&#x304F;&#x3053;&#x3068;&#x3067;Pod&#x3092;&#x4F5C;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x306F;<a href="https://kubernetes.io/docs/tasks/administer-cluster/static-pod/" target="_blank"><code>static pods</code></a>&#x3068;&#x547C;&#x3070;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+DaemonSet&#x3068;&#x9055;&#x3063;&#x3066;static Pod&#x306F;kubectl&#x3084;&#x4ED6;&#x306E;Kubernetes API&#x30AF;&#x30E9;&#x30A4;&#x30A2;&#x30F3;&#x30C8;&#x304B;&#x3089;&#x7BA1;&#x7406;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;
+Static Pod&#x306F;apiserver&#x306B;&#x4F9D;&#x5B58;&#x3057;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x306E;&#x8D77;&#x52D5;&#x6642;&#x306B;&#x5FC5;&#x8981;&#x306A;&#x5834;&#x5408;&#x306B;&#x4FBF;&#x5229;&#x3067;&#x3059;&#x3002;
+&#x307E;&#x305F;&#x3001;Static Pod&#x306F;&#x5C06;&#x6765;&#x975E;&#x63A8;&#x5968;&#x306B;&#x306A;&#x308B;&#x3067;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="deployments">Deployments</h2>
+<p>DaemonSet&#x306F;Pod&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;Pod&#x304C;&#x7D42;&#x4E86;&#x3092;&#x60F3;&#x5B9A;&#x3057;&#x306A;&#x3044;&#x30D7;&#x30ED;&#x30BB;&#x30B9;(&#x4F8B;&#x3048;&#x3070;Web&#x30B5;&#x30FC;&#x30D0;&#x3084;&#x30B9;&#x30C8;&#x30EC;&#x30FC;&#x30B8;&#x30B5;&#x30FC;&#x30D0;)&#x3092;&#x6301;&#x3064;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x3067;<a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/" target="_blank">Deployment</a>&#x306B;&#x4F3C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30D5;&#x30ED;&#x30F3;&#x30C8;&#x30A8;&#x30F3;&#x30C9;&#x306E;&#x3088;&#x3046;&#x306A;Pod&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x30DB;&#x30B9;&#x30C8;&#x3092;&#x6B63;&#x78BA;&#x306B;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x3088;&#x308A;&#x3082;&#x3001;&#x30ED;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x30A2;&#x30C3;&#x30D7;&#x30C7;&#x30FC;&#x30C8;&#x3084;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x306E;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x30A2;&#x30C3;&#x30D7;/&#x30C0;&#x30A6;&#x30F3;&#x304C;&#x91CD;&#x8981;&#x306A;&#x30B9;&#x30C6;&#x30FC;&#x30C8;&#x30EC;&#x30B9;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306B;&#x306F;Deployment&#x3092;&#x4F7F;&#x3063;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;
+DaemonSet&#x306F;&#x3059;&#x3079;&#x3066;&#x3042;&#x308B;&#x3044;&#x306F;&#x4E00;&#x5B9A;&#x306E;&#x30DB;&#x30B9;&#x30C8;&#x3067;1&#x3064;&#x306E;Pod&#x306E;&#x30B3;&#x30D4;&#x30FC;&#x304C;&#x5E38;&#x306B;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x3084;&#x3001;&#x4ED6;&#x306E;Pod&#x306E;&#x524D;&#x306B;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x91CD;&#x8981;&#x306A;&#x5834;&#x5408;&#x306B;&#x4F7F;&#x3063;&#x3066;&#x4E0B;&#x3055;&#x3044;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"DaemonSet","level":"1.4.4.1.1","depth":4,"next":{"title":"Configuration","level":"1.4.5","depth":2,"ref":"","articles":[{"title":"Configurationベストプラクティス","level":"1.4.5.1","depth":3,"path":"concepts/configuration/overview.md","ref":"concepts/configuration/overview.md","articles":[]},{"title":"Managing Compute Resources for Containers","level":"1.4.5.2","depth":3,"ref":"","articles":[]},{"title":"Assigning Pods to Nodes","level":"1.4.5.3","depth":3,"ref":"","articles":[]},{"title":"Secrets","level":"1.4.5.4","depth":3,"ref":"","articles":[]}]},"previous":{"title":"Controllers","level":"1.4.4.1","depth":3,"ref":"","articles":[{"title":"DaemonSet","level":"1.4.4.1.1","depth":4,"path":"concepts/workloads/controllers/daemonset.md","ref":"concepts/workloads/controllers/daemonset.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"concepts/workloads/controllers/daemonset.md","mtime":"2018-05-15T02:14:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-15T02:14:27.864Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
