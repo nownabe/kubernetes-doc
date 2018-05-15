@@ -149,6 +149,13 @@ critical podが有効でDaemonSetのPodがcriticalとラベル付けされてい
 
 # Communicating with Daemon Pods
 
+DaemonSetのPodと通信するためにはいくつか可能な方法があります。
+
+* **Push**: DaemonSetのPodをデータベースのような他のサービスにデータを送信するように設定します。クライアントがありません。
+* **NodeIP and Known Port**: DaemonSetのPodは`hostPort`を使えるので、NodeのIPで到達できます。クライアントは何らかの方法でNodeのIPを知り、慣習によりポートをしっています。
+* **DNS**: 同じPod selectorで[`headless service`](https://kubernetes.io/docs/concepts/services-networking/service/#headless-services)を作り、`endpoints`リソースを使うかDNSのAレコードでDaemonSetを発見します。
+* **Service**: 同じPod selectorでServiceを作り、Serviceを使ってランダムなNodeのDaemonに到達できます。(特定のNodeに到達する方法はありません)
+
 # Updating a DaemonSet
 
 # Alternatives to DaemonSet
