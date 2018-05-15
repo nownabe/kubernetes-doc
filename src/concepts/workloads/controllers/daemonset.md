@@ -158,6 +158,21 @@ DaemonSetのPodと通信するためにはいくつか可能な方法があり�
 
 # Updating a DaemonSet
 
+Nodeのラベルが変更されると、DaemonSetはただちに新しくマッチするNodeにPodを追加して、新しくマッチしないNodeからPodを削除します。
+
+DaemonSetが作成したPodは変更できます。
+しかし、すべてのPodのフィールドを変更できるわけではありません。
+また、DaemonSetコントローラは次回Nodeが作成されたとき(同じ名前であっても)元のテンプレートを使います。
+
+DaemonSetを削除できます。
+もし`kubeclt`で`--cascade=false`を指定したら、PodはNodeに残されます。
+そして別のテンプレートを使って新しいDaemonSetを作成できます。
+別のテンプレートの新しいDaemonSetはラベルがマッチするすべての既存のPodを認識します。
+Podテンプレートに不一致があっても修正も削除もしません。
+Nodeの削除かPodの削除によって新しいPodを作る必要があるでしょう。
+
+Kubernetes 1.6以降ではDaemonSetの[`ローリングアップデート`](https://kubernetes.io/docs/tasks/manage-daemon/update-daemon-set/)ができます。
+
 # Alternatives to DaemonSet
 
 
