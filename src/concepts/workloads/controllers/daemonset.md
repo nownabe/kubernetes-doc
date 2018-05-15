@@ -175,5 +175,34 @@ Kubernetes 1.6以降ではDaemonSetの[`ローリングアップデート`](http
 
 # Alternatives to DaemonSet
 
+## Init Scripts
 
+直接Daemonプロセスをノード上で起動することでDaemonプロセスを実行できます。
+(`init`、`upstartd`、`systemd`を使って)
+これは完璧です。
+ただし、それらに比べてDaemonSetはいくつかメリットがあります。
 
+* アプリケーションと同じ方法でDaemonの監視とログ管理が可能
+* アプリケーションと同様の設定とツール(Pod Templateや`kubectl`)
+* Resource limitが設定されたDaemonを実行することでアプリケーションのコンテナとの分離を強化できます。ただし、これはPodではないコンテナを実行することでも達成できます(例えばDockerで直接起動する)
+
+## Bare Pods
+
+特定のノード上に直接Podを作成して実現できます。
+ただし、DaemonSetはNode障害や破壊的なNodeメンテナンスやカーネルアップグレードなどの何らかの理由で終了したり削除されたPodを交換します。
+この理由により、個別のPodよりDaemonSetを使うべきです。
+
+## Static Pods
+
+Kubeletが監視しているディレクトリにファイルを書くことでPodを作成できます。
+これは[`static pods`](https://kubernetes.io/docs/tasks/administer-cluster/static-pod/)と呼ばれています。
+DaemonSetと違ってstatic Podはkubectlや他のKubernetes APIクライアントから管理できません。
+Static Podはapiserverに依存しないので、クラスタの起動時に必要な場合に便利です。
+また、Static Podは将来非推奨になるでしょう。
+
+## Deployments
+
+DaemonSetはPodを作成し、Podが終了を想定しないプロセス(例えばWebサーバやストレージサーバ)を持つという意味で[Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)に似ています。
+
+フロントエンドのようなPodが実行されるホストを正確にコントロールするよりも、ローリングアップデートやレプリカ数のスケールアップ/ダウンが重要なステートレスサービスにはDeploymentを使って下さい。
+DaemonSetはすべてあるいは一定のホストで1つのPodのコピーが常に実行されていることや、他のPodの前に起動していることが重要な場合に使って下さい。
