@@ -120,6 +120,33 @@ Kubernetesはユーザがそうすることを防ぎません。
 
 # How Daemon Pods are Scheduled
 
+通常はPodが実行されるマシンはKubernetesスケジューラに選択されます。
+しかし、DaemonSetコントローラによって作られたPodは既にマシンが選択されています。
+(Pod作成時に`.spec.nodeName`が指定されていて、スケジューラに無視されます)
+それにより、
+
+* DaemonSetコントローラではNodeの[`unschedulable`](https://kubernetes.io/docs/admin/node/#manual-node-administration)フィールドは尊重されません
+* DaemonSetコントローラはスケジューラが起動していなくてもPodを作成することができるので、クラスタの起動の助けになります
+
+DaemonSetのPodは[`taintsとtolerations`](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration)を尊重しますが、Podは次のtaintsのための`NoExecute` tolerationsを持ち、`tolerationSeconds`を持たず作成されます。
+
+* `node.kubernetes.io/not-ready`
+* `node.alpha.kubernetes.io/unreachable`
+
+これは`TaintBasedEvictions`機能(alpha)が有効なとき、ネットワーク分断のようなNode障害があったときにPodが追い出されないことを保証します。
+(`TaintBasedEvictions`が無効のときも追い出されませんが、tolerationsよりもNodeコントローラにハードコードされた振る舞いをします。)
+
+次のtaintsも有効です。
+
+* `node.kubernetes.io/memory-pressure`
+* `node.kubernetes.io/disk-pressure`
+
+critical podが有効でDaemonSetのPodがcriticalとラベル付けされているとき、Daemon Podは`node.kubernetes.io/out-of-disk`のための`NoSchedule` tolerationとともに作成されます。
+
+以上すべての`NoSchedule` taintは1.8以降で`TaintNodesByCondition`機能(alpha)が有効のときに作成されます。
+
+`node-role.kubernetes.io/master`の`NoSchedule` tolerationは1.6以降ではデフォルトではないためmaster nodeにスケジュールするために必要です。
+
 # Communicating with Daemon Pods
 
 # Updating a DaemonSet
