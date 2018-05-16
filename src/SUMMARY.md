@@ -15,6 +15,7 @@
     * [Managing Compute Resources for Containers]()
     * [Assigning Pods to Nodes]()
     * [Secrets]()
+    * [Taints and Tolerations](concepts/configuration/taint-and-toleration.md)
   * [Configuration]()
   * [Services, Load Balancing, and Networking]()
   * [Storage]()
