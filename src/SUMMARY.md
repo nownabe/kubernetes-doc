@@ -2,6 +2,9 @@
 
 * [はじめに](README.md)
 * [Home]()
+* Accesing the API
+  * [Overview](admin/authorization/index.md)
+    * [Using RBAC Authorization](admin/authorization/rbac.md)
 * [Setup]()
 * [コンセプト](concepts/index.md)
   * [Overview]()
