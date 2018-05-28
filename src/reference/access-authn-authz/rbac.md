@@ -400,3 +400,112 @@ subjects:
   name: system:unauthenticated
   apiGroup: rbac.authorization.k8s.io
 ```
+
+# Default Roles and Role Bindings
+
+APIサーバはデフォルトの`ClusterRole`と`ClusterRoleBinding`オブジェクトを生成します。
+それらの多くは`system:`というプレフィックスが付き、そのリソースがインフラに所有されていることを示します。
+それらのリソースの変更はクラスタの破壊を引き起こす可能性があります。
+例えば`system:node`はClusterRoleです。
+このClusterRoleはkubeletesの権限を定義しています。
+もしこれを変更するとkubeletが正常に動作しなくなります。
+
+クラスタのすべてのデフォルトroleとrolebindingは`kubernetes.io/bootstrapping=rbac-defaults`というラベルがついています。
+
+## Auto-reconciliation
+
+起動時には毎回APIサーバはデフォルトのClusterRoleを足りない権限が内容に更新し、デフォルトのClusterRoleBindingを足りないSubjectがないように更新します。
+これは予期しない変更から回復し、新しいリリースでの変更に追随します。
+
+このreconciliationの対象から外れるには、デフォルトのClusterRoleの`rbac.authorization.kubernetes.io/autoupdate`アノテーションを`false`にセットします。
+デフォルトの権限やsubjectが足りないとクラスタが動作しない可能性があるので注意してください。
+
+Auto-reconciliationはKubernetes 1.6以上でRBACが有効のとき有効になります。
+
+## Discovery Roles
+
+| Default ClusterRole | Default ClusterRoleBinding | Description |
+|---|---|---|
+| **system:basic-user** | **system:authenticated**と**system:unauthenticated**グループ | 彼らに関する基本的な情報の読み取りを許可 |
+| **system:discovery** | **system:authenticated**と**system:unauthenticated**グループ | APIレベルで交渉し発見するのに必要なAPI discoveryエンドポイントへの読み取りを許可 |
+
+## User-fasing Roles
+
+いくつかのデフォルトRoleは`system:`プリフィックスがついていません。
+これらはユーザが直面するよう意図されています。
+`cluster-admin`はスーパーユーザーのroleであり、ClusterRoleBinding (`cluster-status`)`でクラスタ全体に対して付与されます。
+特定のNamespaceのための`admin`、`edit`、`view`はRoleBindingで付与されます。
+
+1.9からuser-facing roleはカスタムリソースへのルールを管理者に付与できるように[ClusterRole Aggregation](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles)を使っています。
+ルールを"admin"、"edit"、"view"に追加するには、以下のラベルを一つ以上持ったClusterRoleを作成します。
+
+```
+metadata:
+  labels:
+    rbac.authorization.k8s.io/aggregate-to-admin: "true"
+    rbac.authorization.k8s.io/aggregate-to-edit: "true"
+    rbac.authorization.k8s.io/aggregate-to-view: "true"
+```
+
+| Default ClusterRole | Default ClusterRoleBinding | Description |
+|---|---|---|
+| **cluster-admin** | **system:masters** グループ | いかなるリソースへのいかなるアクションも可能なスーパーユーザーアクセスを許可します。**ClusterRoleBinding**でバインドされたとき、クラスタ内、全Namespace内のすべてのリソースに対するフルコントロール権限を与えます。**RoleBinding**でバインドされたとき、Namespace自身とそのNamespace内でのすべてのリソースに対するフルコントロール権限を与えます。 |
+| **admin** | None | 管理アクセスを許可します。**RoleBinding**で特定のNamespaceにバインドされることを想定しています。**RoleBinding**でバインドされたとき、Namespace内のほぼすべてのリソースに対する読み書き権限が与えられます。RoleとRoleBindingの作成もできます。Namespace自身とリソースクオータに対する書き込み権限はありません。 |
+| **edit** | None | Namespace内のほぼすべてのオブジェクトに対する読み書きを許可します。RoleとRoleBindingに対する読み書きはできません。 |
+| **view** | None | Namespace内のほぼすべてのオブジェクトに対する読み取りを許可します。RoleとRoleBindingに対する読み取りはできません。エスカレートされているSecretは閲覧できません。 |
+
+## Core Component Roles
+
+| Default ClusterRole | Default ClusterRoleBinding | Description |
+|---|---|---|
+| **system:kube-scheduler** | **system:kube-scheduler**ユーザ | kube-schedulerコンポーネントが必要とするリソースへのアクセスを許可します。 |
+| **system:kube-controller-manager** | **system:kube-controller-manager**ユーザ | kube-controller-managerが必要とするリソースへのアクセスを許可します。個々のコントロールループが必要とする権限は[controller roles](https://kubernetes.io/docs/reference/access-authn-authz/rbac/#controller-roles)が含んでいます。 |
+| **system:node** | 1.8以上はなし | kubeletが必要とするリソースへのアクセスを許可します。すべてのSecretへの読み取りとすべてのPodステータスオブジェクトへの書き込み権限を含みます。1.7からはこのRoleではなく[Node authorizer](https://kubernetes.io/docs/admin/authorization/node/)と[NodeRestriction admission plugin](https://kubernetes.io/docs/admin/admission-controllers/#noderestriction)が推奨されています。 (省略) 1.8以上では自動ではbindingされません。 |
+| **system:node-proxier** | **system:kube-proxy**ユーザ | kube-proxyが必要とするリソースへのアクセスを許可します。 |
+
+## Other Component Roles
+
+| Default ClusterRole | Default ClusterRoleBinding | Description |
+|---|---|---|
+| **system:auth-delegator** | None | 委譲された認証・認可チェックを許可します。一般には統合された認証・認可のためのアドオンのAPIサーバーに使われます。 |
+| **system:heapster** | None | [Heapster](https://github.com/kubernetes/heapster)用のRoleです。 |
+| **system:kube-aggregator** | None | [kube-aggregator](https://github.com/kubernetes/kube-aggregator)用のRoleです。 |
+| **system:kube-dns** | **kube-system** Namespaceの**kube-dns** ServiceAccount | [kube-dns](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)用のRoleです。 |
+| **system:kubelet-api-admin** | None | kubelet APIへのフルアクセス |
+| **system:node-bootstrapper** | None | [Kubelet TLS bootstrapping](https://kubernetes.io/docs/admin/kubelet-tls-bootstrapping/)の動作に必要なリソースへのアクセスを許可します。 |
+| **system:node-problem-detector** | None | [node-problem-detector](https://github.com/kubernetes/node-problem-detector)用のRoleです。|
+| **system:persistent-volume-provisioner** | None | 多くの[dynamic volume provisioners](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#provisioner)が必要とするリソースへのアクセスを許可します。 |
+
+## Controller Roles
+
+[Kubernetes controller manager](https://kubernetes.io/docs/admin/kube-controller-manager/)は核となるコントロールループを実行します。
+`--use-service-account-credentials`で実行されたとき、各コントロールループは分離されたServiceAccountを使用して開始されます。
+`system:controller:`プレフィックスではじまるRoleがそれぞれのコントロールループのために存在します。
+controller managerが`--use-service-account-credentials`を伴わす開始された場合は、すべてのコントロールループは自身の認証情報を使います。
+これは関連するRoleがすべて与えられていなければいけません。
+
+* system:controller:attachdetach-controller
+* system:controller:certificate-controller
+* system:controller:cronjob-controller
+* system:controller:daemon-set-controller
+* system:controller:deployment-controller
+* system:controller:disruption-controller
+* system:controller:endpoint-controller
+* system:controller:generic-garbage-collector
+* system:controller:horizontal-pod-autoscaler
+* system:controller:job-controller
+* system:controller:namespace-controller
+* system:controller:node-controller
+* system:controller:persistent-volume-binder
+* system:controller:pod-garbage-collector
+* system:controller:pv-protection-controller
+* system:controller:pvc-protection-controller
+* system:controller:replicaset-controller
+* system:controller:replication-controller
+* system:controller:resourcequota-controller
+* system:controller:route-controller
+* system:controller:service-account-controller
+* system:controller:service-controller
+* system:controller:statefulset-controller
+* system:controller:ttl-controller
+
