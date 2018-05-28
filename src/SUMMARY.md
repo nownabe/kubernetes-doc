@@ -39,4 +39,6 @@
   * [Clusters]()
   * [Services]()
 * [Reference]()
+  * [Accessing the API]()
+    * [Using RBAC Authorization](reference/access-authn-authz/rbac.md)
 * [Samples]()
