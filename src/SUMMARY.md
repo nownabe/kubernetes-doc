@@ -19,7 +19,7 @@
   * [Services, Load Balancing, and Networking]()
   * [Storage]()
   * [Cluster Administration]()
-* [Tasks]()
+* [Tasks](tasks/index.md)
 * [Tutorials](tutorials/index.md)
   * [Kubernetes入門](tutorials/kubernetes_basics/index.md)
     * [1. Cluster作成](tutorials/kubernetes_basics/1_create_a_cluster.md)
