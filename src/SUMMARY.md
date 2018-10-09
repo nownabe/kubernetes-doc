@@ -21,6 +21,7 @@
   * [Cluster Administration]()
 * [Tasks](tasks/index.md)
   * [アプリケーションの実行](tasks/run-application/index.md)
+    * [Horizontal Pod Autoscaler](tasks/run-application/horizontal-pod-autoscale.md)
 * [Tutorials](tutorials/index.md)
   * [Kubernetes入門](tutorials/kubernetes_basics/index.md)
     * [1. Cluster作成](tutorials/kubernetes_basics/1_create_a_cluster.md)
