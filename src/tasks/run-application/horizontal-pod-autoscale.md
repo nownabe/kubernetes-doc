@@ -101,3 +101,14 @@ Horizontal Pod AutoscalerはKubernetesの`autoscaling` APIグループのAPIリ�
 
 APIオブジェクトの詳細は[HorizontalPodAutoscaler Object](https://git.k8s.io/community/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md#horizontalpodautoscaler-object)を参照してください。
 
+# Support for Horizontal Pod Autoscaler in kubectl
+
+Horizontal Pod Autoscalerは他のAPIリソースのようにkubectlでサポートされています。
+`kubectl create`コマンドで新しいautoscalerを作成できます。
+`kubectl get hpa`で一覧表示でき、`kubectl describe hpa`で詳細を表示できます。
+最後に、`kubectl delete hpa`で削除できます。
+
+また、簡単にHorizontal Pod Autoscalerを作成するための特別な`kubectl autoscale`コマンドがあります。
+例えば、`kubectl autoscale rs foo --min=2 --max=5 --cpu-percent=80`はレプリカセット`foo`に対するautoscalerを作成し、ターゲットCPU使用率を80%としてレプリカ数を2から5で調整します。
+`kubectl autoscale`の詳細なドキュメントは[ここ](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale)にあります。
+
