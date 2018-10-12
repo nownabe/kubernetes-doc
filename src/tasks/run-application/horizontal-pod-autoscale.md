@@ -20,7 +20,7 @@ Horizontal Pod Autoscalerはコントローラマネージャの `--horizontal-p
 * 各Podのリソースメトリクス (CPUのような) は、HorizontalPodAutoscalerのターゲットPodそれぞれについてリソースメトリクスAPIからメトリクスを取得します。
 そして、もし目標使用率が設定されていれば、コントローラは各Podのコンテナのリソースリクエストと同等の使用率を計算します。
 もし目標値が設定されていれば、その値を直接使います。
-コントローラはすべての対象Podの使用率または値 (指定されたターゲットの種類による) の平均をとり、正しいレプリカ数にスケールするために使われる比率を計算します。
+コントローラはすべての対象Podの使用率または値 (指定されたターゲットの種類による) の平均をとり、期待するレプリカ数にスケールするために使われる比率を計算します。
 
 もし、Podのいくつかのコンテナのリソースリクエストが設定されていなかった場合、PodのCPU使用量は定義されず、オートスケーラはそのメトリックに対してなにもしません。
 後述する[algorithm details](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#algorithm-details)にオートスケーリングアルゴリズムがどのように動作するかがあるので見てください。
@@ -42,3 +42,52 @@ HorizontalPodAutoscalerはHeapsterから直接メトリクスを取得するこ�
 オートスケーラはScaleサブリソースを使って関連するスケーラブルコントローラ (Replication Controllers、Deployments、Replica Setsのような) にアクセスします。
 Scaleはレプリカ数を動的に設定し、それらの状態を評価することを許可するためのインターフェイスです。
 Scaleサブリソースについての詳細は[こちら](https://git.k8s.io/community/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md#scale-subresource)で確認できます。
+
+## Algorithm Details
+
+最も基本的な観点から、Horizontal Pod Autoscalerコントローラは期待するメトリック値と現在のメトリック値の比率に基づき操作します。
+
+```
+(期待レプリカ数) = cail[(現在のレプリカ数) * ( (現在のメトリック値) / (期待メトリック値) )]
+```
+
+例えば、現在のメトリック値が`200m`で、期待するメトリック値が`100m`とすると、`200.0 / 100.0 == 2.0`となるためレプリカ数は2倍されます。
+逆に、現在が`50m`の場合は`50.0 / 100.0 == 0.5`となるためレプリカ数は半減されます。
+もし比率が1.0に近い場合はスケーリングはスキップされます(`--horizontal-pod-autoscaler-tolerance`フラグでグローバルに設定される許容誤差です。デフォルトは0.1)。
+
+`targetAverageValue`か`targetAverageUtilization`が指定されている時、`currentMetricValue`はHorizontalPodAutoscalerの対象と鳴っているすべてのPodの平均として計算されます。
+どのような場合でも、許容誤差のチェックと最終的な値の決定の前に、Podのreadinessとメトリクスの紛失を考慮します。
+
+削除タイムスタンプ付きのPod (すなわち、シャットダウンが始まったPod) とすべての失敗したPodは破棄されます。
+
+もし特定のPodのメトリクスがない場合、あとで使うように避けられます。
+メトリクスが欠落しているPodは最終的なスケーリング量を調整するために使われます。
+
+CPUスケーリングのとき、もしいずれかのPodが準備中またはほとんどの最近のメトリックポイントが準備中のものだった場合、同じくどのPodは避けられます。
+
+技術的制約のため、HorizontalPodAutoscalerコントローラは特定のCPUメトリクスを避けるかどうか決める時、Podが最初に準備完了になる時間を正確に測定できません。
+そのかわりにもしPodがunreadyの場合は"not yet ready"とみなし、それが開始するまでの短く設定可能な時間幅でunreadyに移行します。
+この値は`--horizontal-pod-autoscaler-initial-readiness-delay`フラグで設定できます。
+デフォルト値は30秒です。
+一度Podがreadyになれば、もしそれが長くて設定可能な時間までに開始したらreadyへのどんな移行も初回とみなします。
+この値は`--horizontal-pod-autoscaler-cpu-initialization-period`フラグで設定できます。
+
+`currentMetricValue / desiredMetricValue`の基本スケール比は避けられていないまたは上記から破棄されていないPodが計算に使われます。
+
+もしメトリクスの欠損があれば、スケールダウンのときは期待値の100%、スケールアップのときは0%を消費すると仮定してより控えめに平均を再計算します。
+これは潜在的なスケールの大きさを減少させます。
+
+さらに、もしnot-yet-readyなPodがあり、欠損したメトリクスやnot-yet-ready Podを考慮せずスケールアップがあるとき、スケールアップの影響を小さくするためnon-yet-ready Podは0%を消費しているとみなします。
+
+not-yet-ready Podと欠損メトリクスを考慮したあとで、使用比を再計算します。
+もし新しい比でスケールの方向を反転させたり許容誤差内だった場合、スケーリングをスキップします。
+さもなければ新しい比率をスケールに使用します。
+
+もし複数のメトリクスがHorizontalPodAutoscalerで指定されていたら、それぞれのメトリックについて計算して、最大のレプリカ数を選択します。
+もしいずれかのメトリクスが期待レプリカ数に変換できない場合(例えばメトリクスAPIからの取得エラー)、スケーリングはスキップされます。
+
+最後に、HorizontalPodAutoscalerがターゲットをスケールする直前に、推奨スケールは保存されます。
+コントローラは設定可能なウィンドウ内のすべての推奨を考慮しその中から最高の推奨を選びます。
+この値は`--horizontal-pod-autoscaler-downscale-stabilization-window`フラグで設定でき、デフォルトは5分です。
+これは、スケールダウンは徐々に行われ、メトリック値の急激な変化の影響を取り除きます。
+
