@@ -112,3 +112,13 @@ Horizontal Pod Autoscalerは他のAPIリソースのようにkubectlでサポー
 例えば、`kubectl autoscale rs foo --min=2 --max=5 --cpu-percent=80`はレプリカセット`foo`に対するautoscalerを作成し、ターゲットCPU使用率を80%としてレプリカ数を2から5で調整します。
 `kubectl autoscale`の詳細なドキュメントは[ここ](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale)にあります。
 
+# Autoscaling during rolling update
+
+現在のKubernetesでは、Replication Controllerを直接管理したりDeploymentオブジェクトを使って[ローリングアップデート](https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/)ができます。
+Horizontal Pod Autoscalerは後者のみをサポートしています。
+Horizontal Pod AutoscalerはDeploymentオブジェクトにバインドされ、Deploymentオブジェクトのサイズを設定し、DeploymentがReplica Setのサイズ設定に責任を持ちます。
+
+Horizontal Pod AutoscalerはReplication Controllerで直接ローリングアップデートを操作してるときは働きません。すなわち、Horizontal Pod AutoscalerをReplication Controllerにバインドすることはできません(例えば`kubectl rolling-update`)。
+その理由は、ローリングアップデートが新しいReplication Controllerを作る時、Horizontal Pod Autoscalerが新しいReplication Controllerをバインドできないからです。
+
+
