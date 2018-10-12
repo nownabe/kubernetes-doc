@@ -91,3 +91,13 @@ not-yet-ready Podと欠損メトリクスを考慮したあとで、使用比を
 この値は`--horizontal-pod-autoscaler-downscale-stabilization-window`フラグで設定でき、デフォルトは5分です。
 これは、スケールダウンは徐々に行われ、メトリック値の急激な変化の影響を取り除きます。
 
+# API Object
+
+Horizontal Pod AutoscalerはKubernetesの`autoscaling` APIグループのAPIリソースです。
+現在の安定バージョンの`autoscaling/v1`ではCPUによるオートスケーリングのみサポートしています。
+
+ベータバージョンの`autoscaling/v2beta2`ではメモリとカスタムメトリクスによるスケーリングをサポートしています。
+`autoscaling/v1`で動作するとき、`autoscaling/v2beta2`で導入された新しいフィールドはアノテーションとして保存されます。
+
+APIオブジェクトの詳細は[HorizontalPodAutoscaler Object](https://git.k8s.io/community/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md#horizontalpodautoscaler-object)を参照してください。
+
