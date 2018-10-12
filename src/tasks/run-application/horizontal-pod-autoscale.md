@@ -122,3 +122,20 @@ Horizontal Pod AutoscalerはReplication Controllerで直接ローリングアッ
 その理由は、ローリングアップデートが新しいReplication Controllerを作る時、Horizontal Pod Autoscalerが新しいReplication Controllerをバインドできないからです。
 
 
+# Support for cooldown/delay
+
+Horizontal Pod Autoscalerを使ってレプリカグループのスケールを管理するとき、メトリクスの評価の動的な性質によりレプリカ数が頻繁に変動する可能性があります。
+これはスラッシングとも言われます。
+
+v1.6から、クラスタオペレータは`kube-controller-manager`のフラグとしてグローバルなHorizontal Pod Autoscalerの設定をチューニングすることでこの問題を緩和できます。
+
+v1.12から新しいアルゴリズムの更新により遅延は必要なくなりました。
+
+* `--horizontal-pod-autoscaler-downscale-delay`: このオプションの値は、現在のダウンスケールが終わったあと、他のダウンスケールが実行前にどれだけ待たないといけないかを指定します。
+デフォルト値は5分です。
+
+> Note: これらのパラメータをチューニングするとき、クラスタオペレータは発生しうる結果に注意してください。
+> もし遅延(クールダウン)値が非常に長く設定されていたら、Horizontal Pod Autoscalerがワークロードの変化に反応しないということになります。
+> 短く設定された場合、よくスラッシングが発生してしまいます。
+
+
