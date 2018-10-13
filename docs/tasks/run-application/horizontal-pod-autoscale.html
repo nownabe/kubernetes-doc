@@ -1,0 +1,906 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Horizontal Pod Autoscaler · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../tutorials/" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    はじめに
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Home
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Setup
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../concepts/">
+            
+                <a href="../../concepts/">
+            
+                    
+                    コンセプト
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    Overview
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    Kubernetes Architecture
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    Workloads
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" >
+            
+                <span>
+            
+                    
+                    Controllers
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1.1" data-path="../../concepts/workloads/controllers/daemonset.html">
+            
+                <a href="../../concepts/workloads/controllers/daemonset.html">
+            
+                    
+                    DaemonSet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                    Configuration
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../concepts/configuration/overview.html">
+            
+                <a href="../../concepts/configuration/overview.html">
+            
+                    
+                    Configurationベストプラクティス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" >
+            
+                <span>
+            
+                    
+                    Managing Compute Resources for Containers
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" >
+            
+                <span>
+            
+                    
+                    Assigning Pods to Nodes
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" >
+            
+                <span>
+            
+                    
+                    Secrets
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    Configuration
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" >
+            
+                <span>
+            
+                    
+                    Services, Load Balancing, and Networking
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" >
+            
+                <span>
+            
+                    
+                    Storage
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" >
+            
+                <span>
+            
+                    
+                    Cluster Administration
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Tasks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    アプリケーションの実行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1.1" data-path="horizontal-pod-autoscale.html">
+            
+                <a href="horizontal-pod-autoscale.html">
+            
+                    
+                    Horizontal Pod Autoscaler
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../tutorials/">
+            
+                <a href="../../tutorials/">
+            
+                    
+                    Tutorials
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../tutorials/kubernetes_basics/">
+            
+                <a href="../../tutorials/kubernetes_basics/">
+            
+                    
+                    Kubernetes入門
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../tutorials/kubernetes_basics/1_create_a_cluster.html">
+            
+                <a href="../../tutorials/kubernetes_basics/1_create_a_cluster.html">
+            
+                    
+                    1. Cluster作成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../tutorials/kubernetes_basics/2_deploy_an_app.html">
+            
+                <a href="../../tutorials/kubernetes_basics/2_deploy_an_app.html">
+            
+                    
+                    2. アプリケーションデプロイ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../../tutorials/kubernetes_basics/3_explore_your_app.html">
+            
+                <a href="../../tutorials/kubernetes_basics/3_explore_your_app.html">
+            
+                    
+                    3. PodとNode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../../tutorials/kubernetes_basics/4_expose_your_app_publicly.html">
+            
+                <a href="../../tutorials/kubernetes_basics/4_expose_your_app_publicly.html">
+            
+                    
+                    4. アプリケーションの公開
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../../tutorials/kubernetes_basics/5_scale_your_app.html">
+            
+                <a href="../../tutorials/kubernetes_basics/5_scale_your_app.html">
+            
+                    
+                    5. スケール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="../../tutorials/kubernetes_basics/6_update_your_app.html">
+            
+                <a href="../../tutorials/kubernetes_basics/6_update_your_app.html">
+            
+                    
+                    6. アプリケーションの更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <span>
+            
+                    
+                    Online Training Course
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <span>
+            
+                    
+                    Hello Minikube
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <span>
+            
+                    
+                    Object Management Using kubectl
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <span>
+            
+                    
+                    Stateless Applications
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <span>
+            
+                    
+                    Stateful Applications
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" >
+            
+                <span>
+            
+                    
+                    Clusters
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" >
+            
+                <span>
+            
+                    
+                    Services
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    Reference
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    Samples
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Horizontal Pod Autoscaler</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="horizontal-pod-autoscaler">Horizontal Pod Autoscaler</h1>
+<p>Horizontal Pod Autoscaler&#x306F;Replication Controller&#x3001;Deployment&#x3001;&#x307E;&#x305F;&#x306F;Replica Set&#x306E;Pod&#x6570;&#x3092;&#x8A08;&#x6E2C;&#x3055;&#x308C;&#x305F;CPU&#x4F7F;&#x7528;&#x7387;&#x306B;&#x57FA;&#x3065;&#x3044;&#x3066;&#x81EA;&#x52D5;&#x3067;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059; (&#x4ED6;&#x306E;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304C;&#x63D0;&#x4F9B;&#x3059;&#x308B;<a href="https://git.k8s.io/community/contributors/design-proposals/instrumentation/custom-metrics-api.md" target="_blank">&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;</a>&#x3082;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;)&#x3002;
+DaemonSet&#x306A;&#x3069;&#x306E;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x3067;&#x304D;&#x306A;&#x3044;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x52B9;&#x679C;&#x304C;&#x306A;&#x3044;&#x3053;&#x3068;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<p>Horizontal Pod Autoscaler&#x306F;Kubernetes&#x306E;API&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3068;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3068;&#x3057;&#x3066;&#x5B9F;&#x88C5;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306F;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x632F;&#x308B;&#x821E;&#x3044;&#x3092;&#x6C7A;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x8A08;&#x6E2C;&#x3055;&#x308C;&#x308B;&#x5E73;&#x5747;CPU&#x4F7F;&#x7528;&#x7387;&#x304C;&#x30E6;&#x30FC;&#x30B6;&#x306B;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x5024;&#x306B;&#x30DE;&#x30C3;&#x30C1;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;Replication Controller&#x3084;Deployment&#x306E;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x3092;&#x5B9A;&#x671F;&#x7684;&#x306B;&#x8ABF;&#x6574;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h1 id="how-does-the-horizontal-pod-autoscaler-work">How does the Horizontal Pod Autoscaler work?</h1>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/4fe1ef7265a93f5f564bd3fbb0269ebd10b73b4e/1775d/images/docs/horizontal-pod-autoscaler.svg" alt="How does the Horizontal Pod Autoscaler work?"></p>
+<p>Horizontal Pod Autoscaler&#x306F;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30DE;&#x30CD;&#x30FC;&#x30B8;&#x30E3;&#x306E; <code>--horizontal-pod-autoscaler-sync-period</code> &#x30D5;&#x30E9;&#x30B0;&#x3067;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x308B;&#x9593;&#x9694;&#x306B;&#x3088;&#x308B;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x30EB;&#x30FC;&#x30D7;&#x3068;&#x3057;&#x3066;&#x5B9F;&#x88C5;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059; (&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x306F;30&#x79D2;)&#x3002;</p>
+<p>&#x5404;&#x30EB;&#x30FC;&#x30D7;&#x3067;&#x306F;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30DE;&#x30CD;&#x30FC;&#x30B8;&#x30E3;&#x306F;HorizontalPodAutoscaler&#x306E;&#x5B9A;&#x7FA9;&#x306B;&#x3042;&#x308B;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306E;&#x4F7F;&#x7528;&#x7387;&#x3092;&#x30AF;&#x30A8;&#x30EA;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30DE;&#x30CD;&#x30FC;&#x30B8;&#x30E3;&#x306F;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;API (&#x5404;Pod&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;) &#x304B;&#x3001;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;API (&#x3059;&#x3079;&#x3066;&#x306E;&#x4ED6;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;)&#x3002;</p>
+<ul>
+<li>&#x5404;Pod&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9; (CPU&#x306E;&#x3088;&#x3046;&#x306A;) &#x306F;&#x3001;HorizontalPodAutoscaler&#x306E;&#x30BF;&#x30FC;&#x30B2;&#x30C3;&#x30C8;Pod&#x305D;&#x308C;&#x305E;&#x308C;&#x306B;&#x3064;&#x3044;&#x3066;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;API&#x304B;&#x3089;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x3057;&#x3066;&#x3001;&#x3082;&#x3057;&#x76EE;&#x6A19;&#x4F7F;&#x7528;&#x7387;&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x5404;Pod&#x306E;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x3068;&#x540C;&#x7B49;&#x306E;&#x4F7F;&#x7528;&#x7387;&#x3092;&#x8A08;&#x7B97;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3082;&#x3057;&#x76EE;&#x6A19;&#x5024;&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;&#x305D;&#x306E;&#x5024;&#x3092;&#x76F4;&#x63A5;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x3059;&#x3079;&#x3066;&#x306E;&#x5BFE;&#x8C61;Pod&#x306E;&#x4F7F;&#x7528;&#x7387;&#x307E;&#x305F;&#x306F;&#x5024; (&#x6307;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x30BF;&#x30FC;&#x30B2;&#x30C3;&#x30C8;&#x306E;&#x7A2E;&#x985E;&#x306B;&#x3088;&#x308B;) &#x306E;&#x5E73;&#x5747;&#x3092;&#x3068;&#x308A;&#x3001;&#x671F;&#x5F85;&#x3059;&#x308B;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x306B;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x308B;&#x6BD4;&#x7387;&#x3092;&#x8A08;&#x7B97;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<p>&#x3082;&#x3057;&#x3001;Pod&#x306E;&#x3044;&#x304F;&#x3064;&#x304B;&#x306E;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x304C;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x304B;&#x3063;&#x305F;&#x5834;&#x5408;&#x3001;Pod&#x306E;CPU&#x4F7F;&#x7528;&#x91CF;&#x306F;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x305A;&#x3001;&#x30AA;&#x30FC;&#x30C8;&#x30B9;&#x30B1;&#x30FC;&#x30E9;&#x306F;&#x305D;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x306A;&#x306B;&#x3082;&#x3057;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x5F8C;&#x8FF0;&#x3059;&#x308B;<a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#algorithm-details" target="_blank">algorithm details</a>&#x306B;&#x30AA;&#x30FC;&#x30C8;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x30A2;&#x30EB;&#x30B4;&#x30EA;&#x30BA;&#x30E0;&#x304C;&#x3069;&#x306E;&#x3088;&#x3046;&#x306B;&#x52D5;&#x4F5C;&#x3059;&#x308B;&#x304B;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x898B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<ul>
+<li>&#x5404;Pod&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306F;&#x5404;Pod&#x306E;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x6A5F;&#x80FD;&#x3057;&#x307E;&#x3059;&#x3002;&#x305F;&#x3060;&#x3057;&#x3001;&#x4F7F;&#x7528;&#x7387;&#x306F;&#x4F7F;&#x3048;&#x307E;&#x305B;&#x3093;&#x3002;</li>
+<li>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3068;&#x5916;&#x90E8;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306F;&#x554F;&#x984C;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x5358;&#x4E00;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x304C;&#x53D6;&#x5F97;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x306F;&#x76EE;&#x6A19;&#x5024;&#x3068;&#x6BD4;&#x8F03;&#x3055;&#x308C;&#x3001;&#x4E0A;&#x8FF0;&#x306E;&#x6BD4;&#x7387;&#x304C;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+<code>autoscaling/v2beta2</code> API&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x3067;&#x306F;&#x6BD4;&#x8F03;&#x3055;&#x308C;&#x308B;&#x524D;&#x306B;&#x5024;&#x3092;Pod&#x6570;&#x3067;&#x5206;&#x5272;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<p>&#x901A;&#x5E38;HorizontalPodAutoscaler&#x306F;&#x4E00;&#x9023;&#x306E;&#x96C6;&#x7D04;&#x3055;&#x308C;&#x305F;API&#x304B;&#x3089;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059; (<code>metrics.k8s.io</code>&#x3001;<code>custom.metrics.k8s.io</code>&#x3001;<code>external.metrics.k8s.io</code>)&#x3002;
+<code>metrics.k8s.io</code> API&#x306F;&#x901A;&#x5E38;metrics-server&#x3067;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x3001;&#x5225;&#x306B;&#x8D77;&#x52D5;&#x3055;&#x308C;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x6709;&#x308A;&#x307E;&#x3059;&#x3002;
+<a href="https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/#metrics-server" target="_blank">metrics-server</a>&#x306E;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x898B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+HorizontalPodAutoscaler&#x306F;Heapster&#x304B;&#x3089;&#x76F4;&#x63A5;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<blockquote>
+<p>Heapster&#x304B;&#x3089;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x53D6;&#x5F97;&#x306F;Kubernetes 1.11&#x3067;&#x975E;&#x63A8;&#x5968;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;</p>
+</blockquote>
+<p>&#x8A73;&#x3057;&#x304F;&#x306F;<a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-metrics-apis" target="_blank">Support for metrics APIs</a>&#x3092;&#x898B;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<p>&#x30AA;&#x30FC;&#x30C8;&#x30B9;&#x30B1;&#x30FC;&#x30E9;&#x306F;Scale&#x30B5;&#x30D6;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x95A2;&#x9023;&#x3059;&#x308B;&#x30B9;&#x30B1;&#x30FC;&#x30E9;&#x30D6;&#x30EB;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9; (Replication Controllers&#x3001;Deployments&#x3001;Replica Sets&#x306E;&#x3088;&#x3046;&#x306A;) &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x307E;&#x3059;&#x3002;
+Scale&#x306F;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x3092;&#x52D5;&#x7684;&#x306B;&#x8A2D;&#x5B9A;&#x3057;&#x3001;&#x305D;&#x308C;&#x3089;&#x306E;&#x72B6;&#x614B;&#x3092;&#x8A55;&#x4FA1;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x8A31;&#x53EF;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30A4;&#x30B9;&#x3067;&#x3059;&#x3002;
+Scale&#x30B5;&#x30D6;&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306B;&#x3064;&#x3044;&#x3066;&#x306E;&#x8A73;&#x7D30;&#x306F;<a href="https://git.k8s.io/community/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md#scale-subresource" target="_blank">&#x3053;&#x3061;&#x3089;</a>&#x3067;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="algorithm-details">Algorithm Details</h2>
+<p>&#x6700;&#x3082;&#x57FA;&#x672C;&#x7684;&#x306A;&#x89B3;&#x70B9;&#x304B;&#x3089;&#x3001;Horizontal Pod Autoscaler&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x671F;&#x5F85;&#x3059;&#x308B;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x5024;&#x3068;&#x73FE;&#x5728;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x5024;&#x306E;&#x6BD4;&#x7387;&#x306B;&#x57FA;&#x3065;&#x304D;&#x64CD;&#x4F5C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>(&#x671F;&#x5F85;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;) = cail[(&#x73FE;&#x5728;&#x306E;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;) * ( (&#x73FE;&#x5728;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x5024;) / (&#x671F;&#x5F85;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x5024;) )]
+</code></pre><p>&#x4F8B;&#x3048;&#x3070;&#x3001;&#x73FE;&#x5728;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x5024;&#x304C;<code>200m</code>&#x3067;&#x3001;&#x671F;&#x5F85;&#x3059;&#x308B;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x5024;&#x304C;<code>100m</code>&#x3068;&#x3059;&#x308B;&#x3068;&#x3001;<code>200.0 / 100.0 == 2.0</code>&#x3068;&#x306A;&#x308B;&#x305F;&#x3081;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x306F;2&#x500D;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x9006;&#x306B;&#x3001;&#x73FE;&#x5728;&#x304C;<code>50m</code>&#x306E;&#x5834;&#x5408;&#x306F;<code>50.0 / 100.0 == 0.5</code>&#x3068;&#x306A;&#x308B;&#x305F;&#x3081;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x306F;&#x534A;&#x6E1B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x3082;&#x3057;&#x6BD4;&#x7387;&#x304C;1.0&#x306B;&#x8FD1;&#x3044;&#x5834;&#x5408;&#x306F;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x306F;&#x30B9;&#x30AD;&#x30C3;&#x30D7;&#x3055;&#x308C;&#x307E;&#x3059;(<code>--horizontal-pod-autoscaler-tolerance</code>&#x30D5;&#x30E9;&#x30B0;&#x3067;&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x306B;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x308B;&#x8A31;&#x5BB9;&#x8AA4;&#x5DEE;&#x3067;&#x3059;&#x3002;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306F;0.1)&#x3002;</p>
+<p><code>targetAverageValue</code>&#x304B;<code>targetAverageUtilization</code>&#x304C;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x6642;&#x3001;<code>currentMetricValue</code>&#x306F;HorizontalPodAutoscaler&#x306E;&#x5BFE;&#x8C61;&#x3068;&#x9CF4;&#x3063;&#x3066;&#x3044;&#x308B;&#x3059;&#x3079;&#x3066;&#x306E;Pod&#x306E;&#x5E73;&#x5747;&#x3068;&#x3057;&#x3066;&#x8A08;&#x7B97;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x5834;&#x5408;&#x3067;&#x3082;&#x3001;&#x8A31;&#x5BB9;&#x8AA4;&#x5DEE;&#x306E;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3068;&#x6700;&#x7D42;&#x7684;&#x306A;&#x5024;&#x306E;&#x6C7A;&#x5B9A;&#x306E;&#x524D;&#x306B;&#x3001;Pod&#x306E;readiness&#x3068;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306E;&#x7D1B;&#x5931;&#x3092;&#x8003;&#x616E;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x524A;&#x9664;&#x30BF;&#x30A4;&#x30E0;&#x30B9;&#x30BF;&#x30F3;&#x30D7;&#x4ED8;&#x304D;&#x306E;Pod (&#x3059;&#x306A;&#x308F;&#x3061;&#x3001;&#x30B7;&#x30E3;&#x30C3;&#x30C8;&#x30C0;&#x30A6;&#x30F3;&#x304C;&#x59CB;&#x307E;&#x3063;&#x305F;Pod) &#x3068;&#x3059;&#x3079;&#x3066;&#x306E;&#x5931;&#x6557;&#x3057;&#x305F;Pod&#x306F;&#x7834;&#x68C4;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3082;&#x3057;&#x7279;&#x5B9A;&#x306E;Pod&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x304C;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;&#x3042;&#x3068;&#x3067;&#x4F7F;&#x3046;&#x3088;&#x3046;&#x306B;&#x907F;&#x3051;&#x3089;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x304C;&#x6B20;&#x843D;&#x3057;&#x3066;&#x3044;&#x308B;Pod&#x306F;&#x6700;&#x7D42;&#x7684;&#x306A;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x91CF;&#x3092;&#x8ABF;&#x6574;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>CPU&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x306E;&#x3068;&#x304D;&#x3001;&#x3082;&#x3057;&#x3044;&#x305A;&#x308C;&#x304B;&#x306E;Pod&#x304C;&#x6E96;&#x5099;&#x4E2D;&#x307E;&#x305F;&#x306F;&#x307B;&#x3068;&#x3093;&#x3069;&#x306E;&#x6700;&#x8FD1;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x30DD;&#x30A4;&#x30F3;&#x30C8;&#x304C;&#x6E96;&#x5099;&#x4E2D;&#x306E;&#x3082;&#x306E;&#x3060;&#x3063;&#x305F;&#x5834;&#x5408;&#x3001;&#x540C;&#x3058;&#x304F;&#x3069;&#x306E;Pod&#x306F;&#x907F;&#x3051;&#x3089;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x6280;&#x8853;&#x7684;&#x5236;&#x7D04;&#x306E;&#x305F;&#x3081;&#x3001;HorizontalPodAutoscaler&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x7279;&#x5B9A;&#x306E;CPU&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x907F;&#x3051;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x6C7A;&#x3081;&#x308B;&#x6642;&#x3001;Pod&#x304C;&#x6700;&#x521D;&#x306B;&#x6E96;&#x5099;&#x5B8C;&#x4E86;&#x306B;&#x306A;&#x308B;&#x6642;&#x9593;&#x3092;&#x6B63;&#x78BA;&#x306B;&#x6E2C;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x305D;&#x306E;&#x304B;&#x308F;&#x308A;&#x306B;&#x3082;&#x3057;Pod&#x304C;unready&#x306E;&#x5834;&#x5408;&#x306F;&quot;not yet ready&quot;&#x3068;&#x307F;&#x306A;&#x3057;&#x3001;&#x305D;&#x308C;&#x304C;&#x958B;&#x59CB;&#x3059;&#x308B;&#x307E;&#x3067;&#x306E;&#x77ED;&#x304F;&#x8A2D;&#x5B9A;&#x53EF;&#x80FD;&#x306A;&#x6642;&#x9593;&#x5E45;&#x3067;unready&#x306B;&#x79FB;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x5024;&#x306F;<code>--horizontal-pod-autoscaler-initial-readiness-delay</code>&#x30D5;&#x30E9;&#x30B0;&#x3067;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x306F;30&#x79D2;&#x3067;&#x3059;&#x3002;
+&#x4E00;&#x5EA6;Pod&#x304C;ready&#x306B;&#x306A;&#x308C;&#x3070;&#x3001;&#x3082;&#x3057;&#x305D;&#x308C;&#x304C;&#x9577;&#x304F;&#x3066;&#x8A2D;&#x5B9A;&#x53EF;&#x80FD;&#x306A;&#x6642;&#x9593;&#x307E;&#x3067;&#x306B;&#x958B;&#x59CB;&#x3057;&#x305F;&#x3089;ready&#x3078;&#x306E;&#x3069;&#x3093;&#x306A;&#x79FB;&#x884C;&#x3082;&#x521D;&#x56DE;&#x3068;&#x307F;&#x306A;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x5024;&#x306F;<code>--horizontal-pod-autoscaler-cpu-initialization-period</code>&#x30D5;&#x30E9;&#x30B0;&#x3067;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><code>currentMetricValue / desiredMetricValue</code>&#x306E;&#x57FA;&#x672C;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x6BD4;&#x306F;&#x907F;&#x3051;&#x3089;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x307E;&#x305F;&#x306F;&#x4E0A;&#x8A18;&#x304B;&#x3089;&#x7834;&#x68C4;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;Pod&#x304C;&#x8A08;&#x7B97;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3082;&#x3057;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306E;&#x6B20;&#x640D;&#x304C;&#x3042;&#x308C;&#x3070;&#x3001;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x30C0;&#x30A6;&#x30F3;&#x306E;&#x3068;&#x304D;&#x306F;&#x671F;&#x5F85;&#x5024;&#x306E;100%&#x3001;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x30A2;&#x30C3;&#x30D7;&#x306E;&#x3068;&#x304D;&#x306F;0%&#x3092;&#x6D88;&#x8CBB;&#x3059;&#x308B;&#x3068;&#x4EEE;&#x5B9A;&#x3057;&#x3066;&#x3088;&#x308A;&#x63A7;&#x3048;&#x3081;&#x306B;&#x5E73;&#x5747;&#x3092;&#x518D;&#x8A08;&#x7B97;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x306F;&#x6F5C;&#x5728;&#x7684;&#x306A;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x306E;&#x5927;&#x304D;&#x3055;&#x3092;&#x6E1B;&#x5C11;&#x3055;&#x305B;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3055;&#x3089;&#x306B;&#x3001;&#x3082;&#x3057;not-yet-ready&#x306A;Pod&#x304C;&#x3042;&#x308A;&#x3001;&#x6B20;&#x640D;&#x3057;&#x305F;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3084;not-yet-ready Pod&#x3092;&#x8003;&#x616E;&#x305B;&#x305A;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x30A2;&#x30C3;&#x30D7;&#x304C;&#x3042;&#x308B;&#x3068;&#x304D;&#x3001;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x30A2;&#x30C3;&#x30D7;&#x306E;&#x5F71;&#x97FF;&#x3092;&#x5C0F;&#x3055;&#x304F;&#x3059;&#x308B;&#x305F;&#x3081;non-yet-ready Pod&#x306F;0%&#x3092;&#x6D88;&#x8CBB;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x307F;&#x306A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>not-yet-ready Pod&#x3068;&#x6B20;&#x640D;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x8003;&#x616E;&#x3057;&#x305F;&#x3042;&#x3068;&#x3067;&#x3001;&#x4F7F;&#x7528;&#x6BD4;&#x3092;&#x518D;&#x8A08;&#x7B97;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3082;&#x3057;&#x65B0;&#x3057;&#x3044;&#x6BD4;&#x3067;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x306E;&#x65B9;&#x5411;&#x3092;&#x53CD;&#x8EE2;&#x3055;&#x305B;&#x305F;&#x308A;&#x8A31;&#x5BB9;&#x8AA4;&#x5DEE;&#x5185;&#x3060;&#x3063;&#x305F;&#x5834;&#x5408;&#x3001;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x3092;&#x30B9;&#x30AD;&#x30C3;&#x30D7;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3055;&#x3082;&#x306A;&#x3051;&#x308C;&#x3070;&#x65B0;&#x3057;&#x3044;&#x6BD4;&#x7387;&#x3092;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x306B;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3082;&#x3057;&#x8907;&#x6570;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x304C;HorizontalPodAutoscaler&#x3067;&#x6307;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x305F;&#x3089;&#x3001;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x306B;&#x3064;&#x3044;&#x3066;&#x8A08;&#x7B97;&#x3057;&#x3066;&#x3001;&#x6700;&#x5927;&#x306E;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x3092;&#x9078;&#x629E;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3082;&#x3057;&#x3044;&#x305A;&#x308C;&#x304B;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x304C;&#x671F;&#x5F85;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x306B;&#x5909;&#x63DB;&#x3067;&#x304D;&#x306A;&#x3044;&#x5834;&#x5408;(&#x4F8B;&#x3048;&#x3070;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;API&#x304B;&#x3089;&#x306E;&#x53D6;&#x5F97;&#x30A8;&#x30E9;&#x30FC;)&#x3001;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x306F;&#x30B9;&#x30AD;&#x30C3;&#x30D7;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x6700;&#x5F8C;&#x306B;&#x3001;HorizontalPodAutoscaler&#x304C;&#x30BF;&#x30FC;&#x30B2;&#x30C3;&#x30C8;&#x3092;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x76F4;&#x524D;&#x306B;&#x3001;&#x63A8;&#x5968;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x306F;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x8A2D;&#x5B9A;&#x53EF;&#x80FD;&#x306A;&#x30A6;&#x30A3;&#x30F3;&#x30C9;&#x30A6;&#x5185;&#x306E;&#x3059;&#x3079;&#x3066;&#x306E;&#x63A8;&#x5968;&#x3092;&#x8003;&#x616E;&#x3057;&#x305D;&#x306E;&#x4E2D;&#x304B;&#x3089;&#x6700;&#x9AD8;&#x306E;&#x63A8;&#x5968;&#x3092;&#x9078;&#x3073;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x5024;&#x306F;<code>--horizontal-pod-autoscaler-downscale-stabilization-window</code>&#x30D5;&#x30E9;&#x30B0;&#x3067;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x3001;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306F;5&#x5206;&#x3067;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x306F;&#x3001;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x30C0;&#x30A6;&#x30F3;&#x306F;&#x5F90;&#x3005;&#x306B;&#x884C;&#x308F;&#x308C;&#x3001;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x5024;&#x306E;&#x6025;&#x6FC0;&#x306A;&#x5909;&#x5316;&#x306E;&#x5F71;&#x97FF;&#x3092;&#x53D6;&#x308A;&#x9664;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h1 id="api-object">API Object</h1>
+<p>Horizontal Pod Autoscaler&#x306F;Kubernetes&#x306E;<code>autoscaling</code> API&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x306E;API&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x3067;&#x3059;&#x3002;
+&#x73FE;&#x5728;&#x306E;&#x5B89;&#x5B9A;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306E;<code>autoscaling/v1</code>&#x3067;&#x306F;CPU&#x306B;&#x3088;&#x308B;&#x30AA;&#x30FC;&#x30C8;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x306E;&#x307F;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30D9;&#x30FC;&#x30BF;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x306E;<code>autoscaling/v2beta2</code>&#x3067;&#x306F;&#x30E1;&#x30E2;&#x30EA;&#x3068;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306B;&#x3088;&#x308B;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x3092;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+<code>autoscaling/v1</code>&#x3067;&#x52D5;&#x4F5C;&#x3059;&#x308B;&#x3068;&#x304D;&#x3001;<code>autoscaling/v2beta2</code>&#x3067;&#x5C0E;&#x5165;&#x3055;&#x308C;&#x305F;&#x65B0;&#x3057;&#x3044;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x306F;&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x3057;&#x3066;&#x4FDD;&#x5B58;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>API&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x8A73;&#x7D30;&#x306F;<a href="https://git.k8s.io/community/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md#horizontalpodautoscaler-object" target="_blank">HorizontalPodAutoscaler Object</a>&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<h1 id="support-for-horizontal-pod-autoscaler-in-kubectl">Support for Horizontal Pod Autoscaler in kubectl</h1>
+<p>Horizontal Pod Autoscaler&#x306F;&#x4ED6;&#x306E;API&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x306E;&#x3088;&#x3046;&#x306B;kubectl&#x3067;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+<code>kubectl create</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x65B0;&#x3057;&#x3044;autoscaler&#x3092;&#x4F5C;&#x6210;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+<code>kubectl get hpa</code>&#x3067;&#x4E00;&#x89A7;&#x8868;&#x793A;&#x3067;&#x304D;&#x3001;<code>kubectl describe hpa</code>&#x3067;&#x8A73;&#x7D30;&#x3092;&#x8868;&#x793A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x6700;&#x5F8C;&#x306B;&#x3001;<code>kubectl delete hpa</code>&#x3067;&#x524A;&#x9664;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x307E;&#x305F;&#x3001;&#x7C21;&#x5358;&#x306B;Horizontal Pod Autoscaler&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x7279;&#x5225;&#x306A;<code>kubectl autoscale</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x4F8B;&#x3048;&#x3070;&#x3001;<code>kubectl autoscale rs foo --min=2 --max=5 --cpu-percent=80</code>&#x306F;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x30BB;&#x30C3;&#x30C8;<code>foo</code>&#x306B;&#x5BFE;&#x3059;&#x308B;autoscaler&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x30BF;&#x30FC;&#x30B2;&#x30C3;&#x30C8;CPU&#x4F7F;&#x7528;&#x7387;&#x3092;80%&#x3068;&#x3057;&#x3066;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x3092;2&#x304B;&#x3089;5&#x3067;&#x8ABF;&#x6574;&#x3057;&#x307E;&#x3059;&#x3002;
+<code>kubectl autoscale</code>&#x306E;&#x8A73;&#x7D30;&#x306A;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x306F;<a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale" target="_blank">&#x3053;&#x3053;</a>&#x306B;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h1 id="autoscaling-during-rolling-update">Autoscaling during rolling update</h1>
+<p>&#x73FE;&#x5728;&#x306E;Kubernetes&#x3067;&#x306F;&#x3001;Replication Controller&#x3092;&#x76F4;&#x63A5;&#x7BA1;&#x7406;&#x3057;&#x305F;&#x308A;Deployment&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F7F;&#x3063;&#x3066;<a href="https://kubernetes.io/docs/tasks/run-application/rolling-update-replication-controller/" target="_blank">&#x30ED;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x30A2;&#x30C3;&#x30D7;&#x30C7;&#x30FC;&#x30C8;</a>&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+Horizontal Pod Autoscaler&#x306F;&#x5F8C;&#x8005;&#x306E;&#x307F;&#x3092;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+Horizontal Pod Autoscaler&#x306F;Deployment&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x30D0;&#x30A4;&#x30F3;&#x30C9;&#x3055;&#x308C;&#x3001;Deployment&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30B5;&#x30A4;&#x30BA;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3001;Deployment&#x304C;Replica Set&#x306E;&#x30B5;&#x30A4;&#x30BA;&#x8A2D;&#x5B9A;&#x306B;&#x8CAC;&#x4EFB;&#x3092;&#x6301;&#x3061;&#x307E;&#x3059;&#x3002;</p>
+<p>Horizontal Pod Autoscaler&#x306F;Replication Controller&#x3067;&#x76F4;&#x63A5;&#x30ED;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x30A2;&#x30C3;&#x30D7;&#x30C7;&#x30FC;&#x30C8;&#x3092;&#x64CD;&#x4F5C;&#x3057;&#x3066;&#x308B;&#x3068;&#x304D;&#x306F;&#x50CD;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;&#x3059;&#x306A;&#x308F;&#x3061;&#x3001;Horizontal Pod Autoscaler&#x3092;Replication Controller&#x306B;&#x30D0;&#x30A4;&#x30F3;&#x30C9;&#x3059;&#x308B;&#x3053;&#x3068;&#x306F;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;(&#x4F8B;&#x3048;&#x3070;<code>kubectl rolling-update</code>)&#x3002;
+&#x305D;&#x306E;&#x7406;&#x7531;&#x306F;&#x3001;&#x30ED;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x30A2;&#x30C3;&#x30D7;&#x30C7;&#x30FC;&#x30C8;&#x304C;&#x65B0;&#x3057;&#x3044;Replication Controller&#x3092;&#x4F5C;&#x308B;&#x6642;&#x3001;Horizontal Pod Autoscaler&#x304C;&#x65B0;&#x3057;&#x3044;Replication Controller&#x3092;&#x30D0;&#x30A4;&#x30F3;&#x30C9;&#x3067;&#x304D;&#x306A;&#x3044;&#x304B;&#x3089;&#x3067;&#x3059;&#x3002;</p>
+<h1 id="support-for-cooldowndelay">Support for cooldown/delay</h1>
+<p>Horizontal Pod Autoscaler&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x306E;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x3092;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x3068;&#x304D;&#x3001;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306E;&#x8A55;&#x4FA1;&#x306E;&#x52D5;&#x7684;&#x306A;&#x6027;&#x8CEA;&#x306B;&#x3088;&#x308A;&#x30EC;&#x30D7;&#x30EA;&#x30AB;&#x6570;&#x304C;&#x983B;&#x7E41;&#x306B;&#x5909;&#x52D5;&#x3059;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x306F;&#x30B9;&#x30E9;&#x30C3;&#x30B7;&#x30F3;&#x30B0;&#x3068;&#x3082;&#x8A00;&#x308F;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p>v1.6&#x304B;&#x3089;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x30AA;&#x30DA;&#x30EC;&#x30FC;&#x30BF;&#x306F;<code>kube-controller-manager</code>&#x306E;&#x30D5;&#x30E9;&#x30B0;&#x3068;&#x3057;&#x3066;&#x30B0;&#x30ED;&#x30FC;&#x30D0;&#x30EB;&#x306A;Horizontal Pod Autoscaler&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x30C1;&#x30E5;&#x30FC;&#x30CB;&#x30F3;&#x30B0;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3053;&#x306E;&#x554F;&#x984C;&#x3092;&#x7DE9;&#x548C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>v1.12&#x304B;&#x3089;&#x65B0;&#x3057;&#x3044;&#x30A2;&#x30EB;&#x30B4;&#x30EA;&#x30BA;&#x30E0;&#x306E;&#x66F4;&#x65B0;&#x306B;&#x3088;&#x308A;&#x9045;&#x5EF6;&#x306F;&#x5FC5;&#x8981;&#x306A;&#x304F;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<ul>
+<li><code>--horizontal-pod-autoscaler-downscale-delay</code>: &#x3053;&#x306E;&#x30AA;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x5024;&#x306F;&#x3001;&#x73FE;&#x5728;&#x306E;&#x30C0;&#x30A6;&#x30F3;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x304C;&#x7D42;&#x308F;&#x3063;&#x305F;&#x3042;&#x3068;&#x3001;&#x4ED6;&#x306E;&#x30C0;&#x30A6;&#x30F3;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x304C;&#x5B9F;&#x884C;&#x524D;&#x306B;&#x3069;&#x308C;&#x3060;&#x3051;&#x5F85;&#x305F;&#x306A;&#x3044;&#x3068;&#x3044;&#x3051;&#x306A;&#x3044;&#x304B;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x306F;5&#x5206;&#x3067;&#x3059;&#x3002;</li>
+</ul>
+<blockquote>
+<p>Note: &#x3053;&#x308C;&#x3089;&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x30C1;&#x30E5;&#x30FC;&#x30CB;&#x30F3;&#x30B0;&#x3059;&#x308B;&#x3068;&#x304D;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x30AA;&#x30DA;&#x30EC;&#x30FC;&#x30BF;&#x306F;&#x767A;&#x751F;&#x3057;&#x3046;&#x308B;&#x7D50;&#x679C;&#x306B;&#x6CE8;&#x610F;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+&#x3082;&#x3057;&#x9045;&#x5EF6;(&#x30AF;&#x30FC;&#x30EB;&#x30C0;&#x30A6;&#x30F3;)&#x5024;&#x304C;&#x975E;&#x5E38;&#x306B;&#x9577;&#x304F;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x305F;&#x3089;&#x3001;Horizontal Pod Autoscaler&#x304C;&#x30EF;&#x30FC;&#x30AF;&#x30ED;&#x30FC;&#x30C9;&#x306E;&#x5909;&#x5316;&#x306B;&#x53CD;&#x5FDC;&#x3057;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x77ED;&#x304F;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x305F;&#x5834;&#x5408;&#x3001;&#x3088;&#x304F;&#x30B9;&#x30E9;&#x30C3;&#x30B7;&#x30F3;&#x30B0;&#x304C;&#x767A;&#x751F;&#x3057;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+</blockquote>
+<h1 id="support-for-multiple-metrics">Support for multiple metrics</h1>
+<p>Kubernetes 1.6&#x3067;&#x8907;&#x6570;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306B;&#x3088;&#x308B;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x304C;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3055;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002;
+<code>autoscaling/v2beta2</code> API&#x3067;Horizontal Pod Autoscale&#x306B;&#x8907;&#x6570;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x3057;&#x3066;&#x3001;Horizontal Pod Autoscaler&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30C3;&#x30AF;&#x3092;&#x8A55;&#x4FA1;&#x3057;&#x3001;&#x305D;&#x308C;&#x306B;&#x57FA;&#x3065;&#x304D;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x3092;&#x63D0;&#x6848;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x6700;&#x3082;&#x5927;&#x304D;&#x3044;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x304C;&#x9069;&#x7528;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<h1 id="support-for-custom-metrics">Support for custom metrics</h1>
+<p>Kubernetes 1.2&#x3067;&#x7279;&#x6B8A;&#x306A;&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x7528;&#x3044;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306B;&#x3088;&#x308B;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x304C;&#x30A2;&#x30EB;&#x30D5;&#x30A1;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3055;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002;
+Kubernetes 1.6&#x3067;&#x65B0;&#x3057;&#x3044;API&#x306E;&#x305F;&#x3081;&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x5EC3;&#x6B62;&#x3055;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002;
+&#x5F93;&#x6765;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x53CE;&#x96C6;&#x65B9;&#x6CD5;&#x306F;&#x5F15;&#x304D;&#x7D9A;&#x304D;&#x5229;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;&#x305D;&#x308C;&#x3089;&#x306E;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306F;Horizontal Pod Autoscaler&#x3067;&#x306F;&#x4F7F;&#x3048;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x307E;&#x305F;&#x3001;&#x30B9;&#x30B1;&#x30FC;&#x30EB;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306F;&#x3082;&#x3046;Horizontal Pod Autoscaler&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3067;&#x306F;&#x4F7F;&#x3048;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<h1 id="support-for-metrics-apis">Support for metrics APIs</h1>
+<p>&#x6A19;&#x6E96;&#x3067;&#x3001;HorizontalPodAutoscaler&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x4E00;&#x9023;&#x306E;API&#x304B;&#x3089;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;
+API&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x7BA1;&#x7406;&#x8005;&#x306F;&#x6B21;&#x306E;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/tasks/access-kubernetes-api/configure-aggregation-layer/" target="_blank">API aggregation layer</a>&#x304C;&#x6709;&#x52B9;</li>
+<li>&#x5BFE;&#x5FDC;&#x3059;&#x308B;API&#x304C;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;<ul>
+<li>&#x30EA;&#x30BD;&#x30FC;&#x30B9;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306E;&#x305F;&#x3081;&#x306E;<code>metrics.k8s.io</code> API&#x3002;
+&#x4E00;&#x822C;&#x7684;&#x306B;<a href="https://github.com/kubernetes-incubator/metrics-server" target="_blank">metrics-server</a>&#x306B;&#x3088;&#x3063;&#x3066;&#x63D0;&#x4F9B;
+&#x30AF;&#x30E9;&#x30B9;&#x30BF;&#x30A2;&#x30C9;&#x30AA;&#x30F3;&#x3068;&#x3057;&#x3066;&#x8D77;&#x52D5;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</li>
+<li>&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306E;&#x305F;&#x3081;&#x306E;<code>custom.metrics.k8s.io</code> API&#x3002;
+&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x30D9;&#x30F3;&#x30C0;&#x30FC;&#x306E;&quot;adapter&quot; API&#x30B5;&#x30FC;&#x30D0;&#x3067;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</li>
+<li>&#x5916;&#x90E8;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x306E;&#x305F;&#x3081;&#x306E;<code>external.metrics.k8s.io</code> API&#x3002;
+&#x3053;&#x308C;&#x306F;&#x304A;&#x305D;&#x3089;&#x304F;&#x4E0A;&#x8A18;&#x306E;&#x30AB;&#x30B9;&#x30BF;&#x30E0;&#x30E1;&#x30C8;&#x30EA;&#x30AF;&#x30B9;&#x30A2;&#x30C0;&#x30D7;&#x30BF;&#x306B;&#x3088;&#x3063;&#x3066;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+</li>
+<li><code>--horizontal-pod-autoscaler-use-rest-clients</code>&#x304C;<code>true</code>&#x307E;&#x305F;&#x306F;&#x30BB;&#x30C3;&#x30C8;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x3002;
+&#x3053;&#x308C;&#x304C;<code>false</code>&#x3060;&#x3068;Heapster&#x304C;&#x30AA;&#x30FC;&#x30C8;&#x30B9;&#x30B1;&#x30FC;&#x30EA;&#x30F3;&#x30B0;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x307E;&#x3059;&#x304C;&#x975E;&#x63A8;&#x5968;&#x3067;&#x3059;&#x3002;</li>
+</ul>
+<h1 id="whats-next">What&apos;s next</h1>
+<ul>
+<li>&#x8A2D;&#x8A08;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;: <a href="https://git.k8s.io/community/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md" target="_blank">Horizontal Pod Autoscaling</a></li>
+<li>kubectl autoscale&#x30B3;&#x30DE;&#x30F3;&#x30C9;: <a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale" target="_blank">kubectl autoscale</a></li>
+<li><a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/" target="_blank">&#x4F7F;&#x7528;&#x4F8B;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: アプリケーションの実行">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../tutorials/" class="navigation navigation-next " aria-label="Next page: Tutorials">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Horizontal Pod Autoscaler","level":"1.5.1.1","depth":3,"next":{"title":"Tutorials","level":"1.6","depth":1,"path":"tutorials/index.md","ref":"tutorials/index.md","articles":[{"title":"Kubernetes入門","level":"1.6.1","depth":2,"path":"tutorials/kubernetes_basics/index.md","ref":"tutorials/kubernetes_basics/index.md","articles":[{"title":"1. Cluster作成","level":"1.6.1.1","depth":3,"path":"tutorials/kubernetes_basics/1_create_a_cluster.md","ref":"tutorials/kubernetes_basics/1_create_a_cluster.md","articles":[]},{"title":"2. アプリケーションデプロイ","level":"1.6.1.2","depth":3,"path":"tutorials/kubernetes_basics/2_deploy_an_app.md","ref":"tutorials/kubernetes_basics/2_deploy_an_app.md","articles":[]},{"title":"3. PodとNode","level":"1.6.1.3","depth":3,"path":"tutorials/kubernetes_basics/3_explore_your_app.md","ref":"tutorials/kubernetes_basics/3_explore_your_app.md","articles":[]},{"title":"4. アプリケーションの公開","level":"1.6.1.4","depth":3,"path":"tutorials/kubernetes_basics/4_expose_your_app_publicly.md","ref":"tutorials/kubernetes_basics/4_expose_your_app_publicly.md","articles":[]},{"title":"5. スケール","level":"1.6.1.5","depth":3,"path":"tutorials/kubernetes_basics/5_scale_your_app.md","ref":"tutorials/kubernetes_basics/5_scale_your_app.md","articles":[]},{"title":"6. アプリケーションの更新","level":"1.6.1.6","depth":3,"path":"tutorials/kubernetes_basics/6_update_your_app.md","ref":"tutorials/kubernetes_basics/6_update_your_app.md","articles":[]}]},{"title":"Online Training Course","level":"1.6.2","depth":2,"ref":"","articles":[]},{"title":"Hello Minikube","level":"1.6.3","depth":2,"ref":"","articles":[]},{"title":"Object Management Using kubectl","level":"1.6.4","depth":2,"ref":"","articles":[]},{"title":"Stateless Applications","level":"1.6.5","depth":2,"ref":"","articles":[]},{"title":"Stateful Applications","level":"1.6.6","depth":2,"ref":"","articles":[]},{"title":"Clusters","level":"1.6.7","depth":2,"ref":"","articles":[]},{"title":"Services","level":"1.6.8","depth":2,"ref":"","articles":[]}]},"previous":{"title":"アプリケーションの実行","level":"1.5.1","depth":2,"path":"tasks/run-application/index.md","ref":"tasks/run-application/index.md","articles":[{"title":"Horizontal Pod Autoscaler","level":"1.5.1.1","depth":3,"path":"tasks/run-application/horizontal-pod-autoscale.md","ref":"tasks/run-application/horizontal-pod-autoscale.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tasks/run-application/horizontal-pod-autoscale.md","mtime":"2018-10-13T12:05:24.512Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-13T12:06:16.617Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
