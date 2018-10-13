@@ -155,3 +155,19 @@ Kubernetes 1.6で新しいAPIのためアノテーションは廃止されまし
 また、スケールのカスタムメトリクスを指定するアノテーションはもうHorizontal Pod Autoscalerコントローラでは使えません。
 
 
+# Support for metrics APIs
+
+標準で、HorizontalPodAutoscalerコントローラは一連のAPIからメトリクスを取得します。
+APIにアクセスするために、クラスタ管理者は次のことを確認してください。
+
+* [API aggregation layer](https://kubernetes.io/docs/tasks/access-kubernetes-api/configure-aggregation-layer/)が有効
+* 対応するAPIが登録されている
+  * リソースメトリクスのための`metrics.k8s.io` API。
+    一般的に[metrics-server](https://github.com/kubernetes-incubator/metrics-server)によって提供
+    クラスタアドオンとして起動できます。
+  * カスタムメトリクスのための`custom.metrics.k8s.io` API。
+    メトリクスベンダーの"adapter" APIサーバで提供されます。
+  * 外部メトリクスのための`external.metrics.k8s.io` API。
+    これはおそらく上記のカスタムメトリクスアダプタによって提供されます。
+* `--horizontal-pod-autoscaler-use-rest-clients`が`true`またはセットされていない。
+  これが`false`だとHeapsterがオートスケーリングに使われますが非推奨です。
