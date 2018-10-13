@@ -171,3 +171,10 @@ APIにアクセスするために、クラスタ管理者は次のことを確�
     これはおそらく上記のカスタムメトリクスアダプタによって提供されます。
 * `--horizontal-pod-autoscaler-use-rest-clients`が`true`またはセットされていない。
   これが`false`だとHeapsterがオートスケーリングに使われますが非推奨です。
+
+
+# What's next
+
+* 設計ドキュメント: [Horizontal Pod Autoscaling](https://git.k8s.io/community/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md)
+* kubectl autoscaleコマンド: [kubectl autoscale](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#autoscale)
+* [使用例](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
