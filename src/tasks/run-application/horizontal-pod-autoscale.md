@@ -139,3 +139,11 @@ v1.12から新しいアルゴリズムの更新により遅延は必要なくな
 > 短く設定された場合、よくスラッシングが発生してしまいます。
 
 
+# Support for multiple metrics
+
+Kubernetes 1.6で複数のメトリクスによるスケーリングがサポートされました。
+`autoscaling/v2beta2` APIでHorizontal Pod Autoscaleに複数のメトリクスを指定できます。
+そして、Horizontal Pod Autoscalerコントローラはそれぞれのメトリックを評価し、それに基づきスケールを提案します。
+最も大きいスケールが適用されます。
+
+
