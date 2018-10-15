@@ -17,6 +17,7 @@
     * [Secrets]()
   * [Configuration]()
   * [Services, Load Balancing, and Networking](concepts/services-networking/index.md)
+    * [Network Policies](concepts/services-networking/network-policies.md)
   * [Storage]()
   * [Cluster Administration]()
 * [Tasks](tasks/index.md)
