@@ -16,7 +16,7 @@
     * [Assigning Pods to Nodes]()
     * [Secrets]()
   * [Configuration]()
-  * [Services, Load Balancing, and Networking]()
+  * [Services, Load Balancing, and Networking](concepts/services-networking/index.md)
   * [Storage]()
   * [Cluster Administration]()
 * [Tasks](tasks/index.md)
