@@ -3,7 +3,7 @@ DaemonSet
 
 # What is a DaemonSet?
 
-*DaemonSet*はすべて(またはいくつかの)NodeでPodのコピーを実行することを保証します。
+*DaemonSet*はすべて(またはいくつか)のNodeでPodのコピーを実行することを保証します。
 NodeがClusterに追加されると、Podはそれらに追加されます。
 NodeがClusterから削除されると、PodはGarbage Collectionされます。
 DaemonSetを削除すると作成されたPodも削除されます。
